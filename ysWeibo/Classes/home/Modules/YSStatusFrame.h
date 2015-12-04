@@ -13,12 +13,16 @@
 
 /** 昵称的字体 */
 #define YSStatusNameFont [UIFont systemFontOfSize:15]
+/** 被转发微博作者昵称的字体 */
+#define YSRetweetNameFont YSStatusNameFont
 /** 时间的字体 */
 #define YSStatusTimeFont [UIFont systemFontOfSize:12]
 /** 来源的字体 */
 #define YSStatusSourceFont YSStatusTimeFont
-/** 中文的字体 */
+/** 正文的字体 */
 #define YSStatusContentFont [UIFont systemFontOfSize:13]
+/** 被转发微博正文的字体 */
+#define YSRetweetContentFont YSStatusContentFont
 @interface YSStatusFrame : NSObject
 
 @property (nonatomic,strong)YSStatus *status;

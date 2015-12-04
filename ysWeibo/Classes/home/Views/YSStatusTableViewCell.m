@@ -68,7 +68,7 @@
         //添加原创微博内部的子控件
         [self setupOriginalSubviews];
         //添加被转发微博内部的子控件
-//        [self setupRetweetSubviews];
+        [self setupRetweetSubviews];
         //添加工具条子控件
 //        [self setupStatusToolBarSubviews];
     }
@@ -136,11 +136,14 @@
     /** 昵称的label */
     UILabel *retweetNameLabel = [[UILabel alloc]init];
     [self.retweetView addSubview:retweetNameLabel];
+    retweetNameLabel.font = YSRetweetNameFont;
     self.retweetNameLabel = retweetNameLabel;
     
     /** 正文的label */
     UILabel *retweetContentLabel = [[UILabel alloc]init];
+    retweetContentLabel.font = YSRetweetContentFont;
     [self.retweetView addSubview:retweetContentLabel];
+    retweetContentLabel.numberOfLines = 0;
     self.retweetContentLabel = retweetContentLabel;
     
     /** 配图的view */
@@ -164,7 +167,7 @@
     //添加原创微博
     [self setupOriginalData];
     //添加被转发微博
-//    [self setupRetweetData];
+    [self setupRetweetData];
     //添加工具条子控件
 //    [self setupStatusToolBarData];
 }
@@ -201,12 +204,47 @@
     // 7.正文
     self.contentLabel.text = status.text;
     self.contentLabel.frame = self.statusFrame.contentLabelF;
+    
+    // 8.配图
+    if(status.thumbnail_pic){
+        self.photoView.hidden = NO;
+        self.photoView.frame = self.statusFrame.photoViewF;
+        [self.photoView setImageWithURL:[NSURL URLWithString:status.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+    }else{
+        self.photoView.hidden = YES;
+    }
 
 }
 
 //添加被转发微博
 -(void)setupRetweetData
 {
-    
-}
+    YSStatus *retweetStatus = self.statusFrame.status.retweeted_status;
+    YSUser *retweetUser = retweetStatus.user;
+    if (retweetStatus) {
+        self.retweetView.hidden = NO;
+        //1.retweetView
+        self.retweetView.frame = self.statusFrame.retweetViewF;
+        //3.昵称
+        self.retweetNameLabel.text = retweetUser.name;
+        self.retweetNameLabel.frame = self.statusFrame.retweetNameLabelF;
+        
+        // 7.正文
+        self.retweetContentLabel.text = retweetStatus.text;
+//        NSLog(@"%@",retweetStatus.text);
+        self.retweetContentLabel.frame = self.statusFrame.retweetContentLabelF;
+        
+        // 8.配图
+        if(retweetStatus.thumbnail_pic){
+//            NSLog(@"%@",retweetStatus.thumbnail_pic);
+            self.retweetPhotoView.hidden = NO;
+            self.retweetPhotoView.frame = self.statusFrame.retweetPhotoViewF;
+            [self.retweetPhotoView setImageWithURL:[NSURL URLWithString:retweetStatus.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        }else{
+            self.retweetPhotoView.hidden = YES;
+        }
+    } else {
+        self.retweetView.hidden = YES;
+    }
+    }
 @end
