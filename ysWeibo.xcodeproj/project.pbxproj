@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */; };
 		5AA472F51C106DEC00172B40 /* YSaccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F41C106DEC00172B40 /* YSaccount.m */; };
 		5AA472F91C1079DA00172B40 /* YSaccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F81C1079DA00172B40 /* YSaccountTool.m */; };
 		5AA472FD1C107DF900172B40 /* YSweiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472FC1C107DF900172B40 /* YSweiboTool.m */; };
@@ -81,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A5D58D11C11C2AE006B05AA /* YSStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusTableViewCell.h; sourceTree = "<group>"; };
+		5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTableViewCell.m; sourceTree = "<group>"; };
 		5AA472F31C106DEC00172B40 /* YSaccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccount.h; sourceTree = "<group>"; };
 		5AA472F41C106DEC00172B40 /* YSaccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSaccount.m; sourceTree = "<group>"; };
 		5AA472F71C1079DA00172B40 /* YSaccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccountTool.h; sourceTree = "<group>"; };
@@ -510,6 +513,8 @@
 			children = (
 				5AE4764E1C0E442500A8A128 /* YStitleButton.h */,
 				5AE4764F1C0E442500A8A128 /* YStitleButton.m */,
+				5A5D58D11C11C2AE006B05AA /* YSStatusTableViewCell.h */,
+				5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -818,6 +823,7 @@
 				5AA473DD1C10AF1900172B40 /* NSObject+MJClass.m in Sources */,
 				5AA473951C109D6900172B40 /* SDWebImageManager.m in Sources */,
 				5ABA505C1C0F0D0F00162113 /* YSNewFeatureViewController.m in Sources */,
+				5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */,
 				5ABEB0061C0B94640020C597 /* YSmessageViewController.m in Sources */,
 				5ADE6CBA1C0B7F8A00A78412 /* main.m in Sources */,
 				5ABEB00F1C0BB1D60020C597 /* YStabBarButton.m in Sources */,

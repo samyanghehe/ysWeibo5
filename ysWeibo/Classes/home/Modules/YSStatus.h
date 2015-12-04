@@ -30,7 +30,24 @@
  */
 @property (nonatomic, assign) int comments_count;
 /**
+ *  微博的赞
+ */
+@property (nonatomic, assign) int attitudes_count;
+/**
+ *  用户的配图
+ */
+@property (nonatomic, copy) NSString *thumbnail_pic;
+/**
+ *  发表时间
+ */
+@property (nonatomic ,copy) NSString *created_at;
+/**
  *  微博的作者
  */
 @property (nonatomic, strong) YSUser *user;
+/**
+ *  被转发的微博
+ */
+@property (nonatomic, strong) YSStatus *retweeted_status;
+
 @end
