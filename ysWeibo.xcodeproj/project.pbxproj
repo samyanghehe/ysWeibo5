@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */; };
+		5A5D58D61C11CECF006B05AA /* YSStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */; };
 		5AA472F51C106DEC00172B40 /* YSaccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F41C106DEC00172B40 /* YSaccount.m */; };
 		5AA472F91C1079DA00172B40 /* YSaccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F81C1079DA00172B40 /* YSaccountTool.m */; };
 		5AA472FD1C107DF900172B40 /* YSweiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472FC1C107DF900172B40 /* YSweiboTool.m */; };
@@ -84,6 +85,8 @@
 /* Begin PBXFileReference section */
 		5A5D58D11C11C2AE006B05AA /* YSStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusTableViewCell.h; sourceTree = "<group>"; };
 		5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTableViewCell.m; sourceTree = "<group>"; };
+		5A5D58D41C11CECF006B05AA /* YSStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusFrame.h; sourceTree = "<group>"; };
+		5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusFrame.m; sourceTree = "<group>"; };
 		5AA472F31C106DEC00172B40 /* YSaccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccount.h; sourceTree = "<group>"; };
 		5AA472F41C106DEC00172B40 /* YSaccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSaccount.m; sourceTree = "<group>"; };
 		5AA472F71C1079DA00172B40 /* YSaccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccountTool.h; sourceTree = "<group>"; };
@@ -504,6 +507,8 @@
 				5AA4739D1C10A2D000172B40 /* YSStatus.m */,
 				5AA4739F1C10A2DF00172B40 /* YSUser.h */,
 				5AA473A01C10A2DF00172B40 /* YSUser.m */,
+				5A5D58D41C11CECF006B05AA /* YSStatusFrame.h */,
+				5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -807,6 +812,7 @@
 				5AA473401C10874800172B40 /* MBProgressHUD+MJ.m in Sources */,
 				5AA473DC1C10AF1900172B40 /* MJPropertyType.m in Sources */,
 				5AA473E11C10AF1900172B40 /* NSString+MJExtension.m in Sources */,
+				5A5D58D61C11CECF006B05AA /* YSStatusFrame.m in Sources */,
 				5ABEAFD91C0B85710020C597 /* YStabBarController.m in Sources */,
 				5AE476441C0DD2ED00A8A128 /* YSbadgeValueButton.m in Sources */,
 				5AA4738F1C109D6900172B40 /* NSData+ImageContentType.m in Sources */,

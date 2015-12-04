@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class YSStatusFrame;
 
 @interface YSStatusTableViewCell : UITableViewCell
 
+@property (nonatomic,strong)YSStatusFrame *statusFrame;
+
++(instancetype)cellWithTableView:(UITableView *)tableView;
 @end

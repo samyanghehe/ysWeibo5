@@ -17,8 +17,10 @@
 #import "YSStatus.h"
 #import "YSUser.h"
 #import "MJExtension.h"
+#import "YSStatusFrame.h"
+#import "YSStatusTableViewCell.h"
 @interface YShomeViewController()
-@property(nonatomic,strong)NSArray *statuses;
+@property(nonatomic,strong)NSArray *statuseFrames;
 @end
 @implementation YShomeViewController
 
@@ -39,9 +41,16 @@
 //    param[@"count"] = @99;
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
-        
         //高级技术.运行时.字典转模型
-        self.statuses = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+        NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        for (YSStatus *status in statusArray) {
+            YSStatusFrame *statusFrame = [[YSStatusFrame alloc]init];
+            statusFrame.status = status;
+            [statusFrameArray addObject:statusFrame];
+        }
+        _statuseFrames = statusFrameArray;
+        
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        
@@ -80,25 +89,23 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.statuses.count;
+    return self.statuseFrames.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *ID = @"home";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    YSStatus *status = self.statuses[indexPath.row];
-    cell.textLabel.text = status.text;
-    YSUser *user = status.user;
-    cell.detailTextLabel.text = user.name;
-    NSURL *iconUrl = [NSURL URLWithString:user.profile_image_url];
-    [cell.imageView setImageWithURL:iconUrl placeholderImage:[UIImage imageWithName:@"tabbar_compose_button"]];
+    YSStatusTableViewCell *cell = [YSStatusTableViewCell cellWithTableView:tableView];
+    
+    cell.statusFrame = self.statuseFrames[indexPath.row];
+    
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YSStatusFrame *statusFrame = self.statuseFrames[indexPath.row];
+    return statusFrame.cellHeight;
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *vc = [[UIViewController alloc]init];
