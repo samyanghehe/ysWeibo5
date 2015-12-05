@@ -73,7 +73,7 @@
 }
 -(void)setChildViewControllerWithVC:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
-    vc.view.backgroundColor = [UIColor grayColor];
+//    vc.view.backgroundColor = [UIColor grayColor];
     vc.title = title;
     vc.tabBarItem.image = [UIImage imageWithName:image];
     UIImage * sImage = [UIImage imageWithName:selectedImage];

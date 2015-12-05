@@ -22,9 +22,9 @@
  */
 @property (nonatomic, copy) NSString *profile_image_url;
 /**
- *  用户是否为vip
+ *  vip等级
  */
-@property (nonatomic, assign, getter=isVip) BOOL vip;
+@property (nonatomic, assign) int mbrank;
 
 
 @end

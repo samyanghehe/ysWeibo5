@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define YSStatusCellBorder 5
+
 
 @implementation YSStatusFrame
 /**
@@ -22,9 +22,8 @@
 {
     _status = status;
     
-    
 //    0. cell的宽度
-    CGFloat cellW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat cellW = [UIScreen mainScreen].bounds.size.width - YSStatusTableBorder * 2;
     
 //    1. /** 顶部的view */
 //    @property (nonatomic,assign ,readonly)CGRect topViewF;
@@ -52,7 +51,7 @@
     
 //    4./** 会员的view */
 //    @property (nonatomic,assign ,readonly)CGRect vipViewF;
-    if (status.user.isVip) {
+    if (status.user.mbrank) {
         CGFloat vipViewW = 14;
         CGFloat vipViewH = nameLabelSize.height;
         CGFloat vipViewX = CGRectGetMaxX(_nameLabelF) + YSStatusCellBorder;
@@ -106,7 +105,8 @@
         //    @property (nonatomic,assign ,readonly)CGRect retweetNameLabelF;
         CGFloat retweetNameLabelX = YSStatusCellBorder;
         CGFloat retweetNameLabelY = YSStatusCellBorder;
-        CGSize retweetNameLabelSize = [status.retweeted_status.user.name sizeWithFont:YSRetweetNameFont];
+        NSString *name = [NSString stringWithFormat:@"@%@",status.retweeted_status.user.name];
+        CGSize retweetNameLabelSize = [name sizeWithFont:YSRetweetNameFont];
         _retweetNameLabelF = (CGRect){{retweetNameLabelX, retweetNameLabelY}, retweetNameLabelSize};
         
         //    11. /** 被转发微博正文的label */
@@ -139,9 +139,14 @@
         }
     }
     _topViewF = CGRectMake(topViewX, topViewY, topViewW, topViewH);
-
+    
+    CGFloat toolBarViewX = topViewX;
+    CGFloat toolBarViewY = CGRectGetMaxY(_topViewF);
+    CGFloat toolBarViewW = topViewW;
+    CGFloat toolBarViewH = 35;
+    _toolBarViewF = CGRectMake(toolBarViewX, toolBarViewY, toolBarViewW, toolBarViewH);
     //cell的高度
-    _cellHeight = CGRectGetMaxY(_topViewF) + YSStatusCellBorder;
+    _cellHeight = CGRectGetMaxY(_toolBarViewF) + 15;
 ////    //被转发微博的控件
 ////    /** 下面三个view的父view,要添加到自己微博的控件topView */
 ////    @property (nonatomic,assign ,readonly)CGRect retweetViewF;

@@ -5,7 +5,8 @@
 //  Created by ys on 15/11/29.
 //  Copyright (c) 2015年 ys. All rights reserved.
 //
-
+// 2.获得RGB颜色
+#define IWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #import "YSHomeViewController.h"
 #import "UIImage+YS.h"
 #import "UIBarButtonItem+YS.h"
@@ -29,7 +30,6 @@
     [super viewDidLoad];
     [self setUpNavBar];
     [self setUpWeiboList];
-    
 }
 -(void)setUpWeiboList
 {
@@ -38,9 +38,10 @@
     YSaccount *account = [YSaccountTool account];
     
     param[@"access_token"] = account.access_token;
-//    param[@"count"] = @99;
+//    param[@"count"] = @1;
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
+//        NSLog(@"%@",responseObject[@"statuses"]);
         //高级技术.运行时.字典转模型
         NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
         NSMutableArray *statusFrameArray = [NSMutableArray array];
@@ -63,9 +64,10 @@
     
     YStitleButton *titleButton = [YStitleButton titleButton];
     titleButton.frame = CGRectMake(0, 0, 80, 30);
-    
+     self.tableView.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1.0];
     [titleButton addTarget:self action:@selector(changeTitleImage:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
+    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
 }
 -(void)changeTitleImage:(YStitleButton *)button
 {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1A4E0B1C13369000AF0817 /* YSsearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E0A1C13369000AF0817 /* YSsearchBar.m */; };
+		5A1A4E101C1336A200AF0817 /* UIBarButtonItem+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E0D1C1336A200AF0817 /* UIBarButtonItem+YS.m */; };
+		5A1A4E111C1336A200AF0817 /* UIImage+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E0F1C1336A200AF0817 /* UIImage+YS.m */; };
+		5A1A4E141C1336C700AF0817 /* NSDate+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E131C1336C700AF0817 /* NSDate+YS.m */; };
 		5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */; };
 		5A5D58D61C11CECF006B05AA /* YSStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */; };
 		5AA472F51C106DEC00172B40 /* YSaccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F41C106DEC00172B40 /* YSaccount.m */; };
@@ -58,7 +62,6 @@
 		5ABEB0041C0B94640020C597 /* YShomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEAFF01C0B94640020C597 /* YShomeViewController.m */; };
 		5ABEB0051C0B94640020C597 /* YSmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEAFFA1C0B94640020C597 /* YSmeViewController.m */; };
 		5ABEB0061C0B94640020C597 /* YSmessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB0001C0B94640020C597 /* YSmessageViewController.m */; };
-		5ABEB0091C0B9C0F0020C597 /* UIImage+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB0081C0B9C0F0020C597 /* UIImage+YS.m */; };
 		5ABEB00C1C0BA16F0020C597 /* YStabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB00B1C0BA16F0020C597 /* YStabBarView.m */; };
 		5ABEB00F1C0BB1D60020C597 /* YStabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB00E1C0BB1D60020C597 /* YStabBarButton.m */; };
 		5ADE6CBA1C0B7F8A00A78412 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE6CB91C0B7F8A00A78412 /* main.m */; };
@@ -67,8 +70,6 @@
 		5ADE6CD41C0B7F8A00A78412 /* ysWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE6CD31C0B7F8A00A78412 /* ysWeiboTests.m */; };
 		5AE476441C0DD2ED00A8A128 /* YSbadgeValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE476431C0DD2ED00A8A128 /* YSbadgeValueButton.m */; };
 		5AE476471C0DEC6600A8A128 /* YSNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE476461C0DEC6600A8A128 /* YSNavgationController.m */; };
-		5AE4764A1C0DFDD000A8A128 /* UIBarButtonItem+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE476491C0DFDD000A8A128 /* UIBarButtonItem+YS.m */; };
-		5AE4764D1C0E171300A8A128 /* YSsearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4764C1C0E171300A8A128 /* YSsearchBar.m */; };
 		5AE476501C0E442500A8A128 /* YStitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4764F1C0E442500A8A128 /* YStitleButton.m */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1A4E091C13369000AF0817 /* YSsearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSsearchBar.h; sourceTree = "<group>"; };
+		5A1A4E0A1C13369000AF0817 /* YSsearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSsearchBar.m; sourceTree = "<group>"; };
+		5A1A4E0C1C1336A200AF0817 /* UIBarButtonItem+YS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YS.h"; sourceTree = "<group>"; };
+		5A1A4E0D1C1336A200AF0817 /* UIBarButtonItem+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YS.m"; sourceTree = "<group>"; };
+		5A1A4E0E1C1336A200AF0817 /* UIImage+YS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YS.h"; sourceTree = "<group>"; };
+		5A1A4E0F1C1336A200AF0817 /* UIImage+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YS.m"; sourceTree = "<group>"; };
+		5A1A4E121C1336C700AF0817 /* NSDate+YS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YS.h"; sourceTree = "<group>"; };
+		5A1A4E131C1336C700AF0817 /* NSDate+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YS.m"; sourceTree = "<group>"; };
 		5A5D58D11C11C2AE006B05AA /* YSStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusTableViewCell.h; sourceTree = "<group>"; };
 		5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTableViewCell.m; sourceTree = "<group>"; };
 		5A5D58D41C11CECF006B05AA /* YSStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusFrame.h; sourceTree = "<group>"; };
@@ -187,8 +196,6 @@
 		5ABEAFFA1C0B94640020C597 /* YSmeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSmeViewController.m; sourceTree = "<group>"; };
 		5ABEAFFF1C0B94640020C597 /* YSmessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSmessageViewController.h; sourceTree = "<group>"; };
 		5ABEB0001C0B94640020C597 /* YSmessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSmessageViewController.m; sourceTree = "<group>"; };
-		5ABEB0071C0B9C0F0020C597 /* UIImage+YS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+YS.h"; path = "../UIImage+YS.h"; sourceTree = "<group>"; };
-		5ABEB0081C0B9C0F0020C597 /* UIImage+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+YS.m"; path = "../UIImage+YS.m"; sourceTree = "<group>"; };
 		5ABEB00A1C0BA16F0020C597 /* YStabBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YStabBarView.h; sourceTree = "<group>"; };
 		5ABEB00B1C0BA16F0020C597 /* YStabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YStabBarView.m; sourceTree = "<group>"; };
 		5ABEB00D1C0BB1D60020C597 /* YStabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YStabBarButton.h; sourceTree = "<group>"; };
@@ -206,10 +213,6 @@
 		5AE476431C0DD2ED00A8A128 /* YSbadgeValueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSbadgeValueButton.m; sourceTree = "<group>"; };
 		5AE476451C0DEC6600A8A128 /* YSNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNavgationController.h; sourceTree = "<group>"; };
 		5AE476461C0DEC6600A8A128 /* YSNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNavgationController.m; sourceTree = "<group>"; };
-		5AE476481C0DFDD000A8A128 /* UIBarButtonItem+YS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+YS.h"; sourceTree = "<group>"; };
-		5AE476491C0DFDD000A8A128 /* UIBarButtonItem+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+YS.m"; sourceTree = "<group>"; };
-		5AE4764B1C0E171300A8A128 /* YSsearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSsearchBar.h; sourceTree = "<group>"; };
-		5AE4764C1C0E171300A8A128 /* YSsearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSsearchBar.m; sourceTree = "<group>"; };
 		5AE4764E1C0E442500A8A128 /* YStitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YStitleButton.h; sourceTree = "<group>"; };
 		5AE4764F1C0E442500A8A128 /* YStitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YStitleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +235,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A1A4E051C1335D000AF0817 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5A1A4E0C1C1336A200AF0817 /* UIBarButtonItem+YS.h */,
+				5A1A4E0D1C1336A200AF0817 /* UIBarButtonItem+YS.m */,
+				5A1A4E0E1C1336A200AF0817 /* UIImage+YS.h */,
+				5A1A4E0F1C1336A200AF0817 /* UIImage+YS.m */,
+				5A1A4E121C1336C700AF0817 /* NSDate+YS.h */,
+				5A1A4E131C1336C700AF0817 /* NSDate+YS.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		5AA472F61C1079C700172B40 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,14 +543,9 @@
 		5ABEAFF31C0B94640020C597 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				5A1A4E051C1335D000AF0817 /* Category */,
 				5AA472FE1C1086C900172B40 /* Libs */,
 				5AA472FA1C107DDF00172B40 /* Tools */,
-				5AE4764B1C0E171300A8A128 /* YSsearchBar.h */,
-				5AE4764C1C0E171300A8A128 /* YSsearchBar.m */,
-				5AE476481C0DFDD000A8A128 /* UIBarButtonItem+YS.h */,
-				5AE476491C0DFDD000A8A128 /* UIBarButtonItem+YS.m */,
-				5ABEB0071C0B9C0F0020C597 /* UIImage+YS.h */,
-				5ABEB0081C0B9C0F0020C597 /* UIImage+YS.m */,
 				5ABEAFF41C0B94640020C597 /* Controlls */,
 				5ABEAFF51C0B94640020C597 /* Modules */,
 				5ABEAFF61C0B94640020C597 /* Views */,
@@ -563,6 +574,8 @@
 		5ABEAFF61C0B94640020C597 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A1A4E091C13369000AF0817 /* YSsearchBar.h */,
+				5A1A4E0A1C13369000AF0817 /* YSsearchBar.m */,
 				5AE476421C0DD2ED00A8A128 /* YSbadgeValueButton.h */,
 				5AE476431C0DD2ED00A8A128 /* YSbadgeValueButton.m */,
 				5ABEB00A1C0BA16F0020C597 /* YStabBarView.h */,
@@ -798,8 +811,8 @@
 				5ABEB0051C0B94640020C597 /* YSmeViewController.m in Sources */,
 				5AA473961C109D6900172B40 /* SDWebImagePrefetcher.m in Sources */,
 				5AA4738E1C109D6900172B40 /* MKAnnotationView+WebCache.m in Sources */,
+				5A1A4E141C1336C700AF0817 /* NSDate+YS.m in Sources */,
 				5AA473A11C10A2DF00172B40 /* YSUser.m in Sources */,
-				5AE4764A1C0DFDD000A8A128 /* UIBarButtonItem+YS.m in Sources */,
 				5ABEB0041C0B94640020C597 /* YShomeViewController.m in Sources */,
 				5AE476501C0E442500A8A128 /* YStitleButton.m in Sources */,
 				5AA473DA1C10AF1900172B40 /* MJProperty.m in Sources */,
@@ -811,9 +824,11 @@
 				5AA473E01C10AF1900172B40 /* NSObject+MJProperty.m in Sources */,
 				5AA473401C10874800172B40 /* MBProgressHUD+MJ.m in Sources */,
 				5AA473DC1C10AF1900172B40 /* MJPropertyType.m in Sources */,
+				5A1A4E0B1C13369000AF0817 /* YSsearchBar.m in Sources */,
 				5AA473E11C10AF1900172B40 /* NSString+MJExtension.m in Sources */,
 				5A5D58D61C11CECF006B05AA /* YSStatusFrame.m in Sources */,
 				5ABEAFD91C0B85710020C597 /* YStabBarController.m in Sources */,
+				5A1A4E111C1336A200AF0817 /* UIImage+YS.m in Sources */,
 				5AE476441C0DD2ED00A8A128 /* YSbadgeValueButton.m in Sources */,
 				5AA4738F1C109D6900172B40 /* NSData+ImageContentType.m in Sources */,
 				5AA473981C109D6900172B40 /* UIImage+GIF.m in Sources */,
@@ -847,14 +862,13 @@
 				5AA473971C109D6900172B40 /* UIButton+WebCache.m in Sources */,
 				5AA473391C10871B00172B40 /* AFURLSessionManager.m in Sources */,
 				5AA473351C10871B00172B40 /* AFSecurityPolicy.m in Sources */,
-				5ABEB0091C0B9C0F0020C597 /* UIImage+YS.m in Sources */,
 				5AA473901C109D6900172B40 /* SDImageCache.m in Sources */,
 				5AB364EF1C0F8FF2005417CA /* YSOAuthViewController.m in Sources */,
 				5AA472F91C1079DA00172B40 /* YSaccountTool.m in Sources */,
 				5AA473341C10871B00172B40 /* AFNetworkReachabilityManager.m in Sources */,
-				5AE4764D1C0E171300A8A128 /* YSsearchBar.m in Sources */,
 				5AA4739A1C109D6900172B40 /* UIImage+WebP.m in Sources */,
 				5AA473D71C10AF1900172B40 /* MJDictionaryCache.m in Sources */,
+				5A1A4E101C1336A200AF0817 /* UIBarButtonItem+YS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
