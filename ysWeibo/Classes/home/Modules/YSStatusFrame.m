@@ -147,43 +147,6 @@
     _toolBarViewF = CGRectMake(toolBarViewX, toolBarViewY, toolBarViewW, toolBarViewH);
     //cell的高度
     _cellHeight = CGRectGetMaxY(_toolBarViewF) + 15;
-////    //被转发微博的控件
-////    /** 下面三个view的父view,要添加到自己微博的控件topView */
-////    @property (nonatomic,assign ,readonly)CGRect retweetViewF;
-//    CGFloat retweetViewX = 0;
-//    CGFloat retweetViewY = 0;
-//    CGFloat retweetViewW = cellW;
-//    CGFloat retweetViewH = 0;
-//    _topViewF = CGRectMake(retweetViewX, retweetViewY, retweetViewW, retweetViewH);
-////    /** 昵称的label */
-////    @property (nonatomic,assign ,readonly)CGRect retweetNameLabelF;
-//    CGFloat retweetNameLabelX = 0;
-//    CGFloat retweetNameLabelY = 0;
-//    CGFloat retweetNameLabelW = cellW;
-//    CGFloat retweetNameLabelH = 0;
-//    _topViewF = CGRectMake(retweetNameLabelX, retweetNameLabelY, retweetNameLabelW, retweetNameLabelH);
-////    /** 正文的label */
-////    @property (nonatomic,assign ,readonly)CGRect retweetContentLabelF;
-//    CGFloat retweetContentLabelX = 0;
-//    CGFloat retweetContentLabelY = 0;
-//    CGFloat retweetContentLabelW = cellW;
-//    CGFloat retweetContentLabelH = 0;
-//    _topViewF = CGRectMake(retweetContentLabelX, retweetContentLabelY, retweetContentLabelW, retweetContentLabelH);
-////    /** 配图的view */
-////    @property (nonatomic,assign ,readonly)CGRect retweetPhotoViewF;
-//    CGFloat retweetPhotoViewX = 0;
-//    CGFloat retweetPhotoViewY = 0;
-//    CGFloat retweetPhotoViewW = cellW;
-//    CGFloat retweetPhotoViewH = 0;
-//    _topViewF = CGRectMake(retweetPhotoViewX, retweetPhotoViewY, retweetPhotoViewW, retweetPhotoViewH);
-////    
-////    //每条微博底部的工具条
-////    @property (nonatomic,assign ,readonly)CGRect toolBarViewF;
-//    CGFloat toolBarViewX = 0;
-//    CGFloat toolBarViewY = 0;
-//    CGFloat toolBarViewW = cellW;
-//    CGFloat toolBarViewH = 0;
-//    _topViewF = CGRectMake(toolBarViewX, toolBarViewY, toolBarViewW, toolBarViewH);
     
 }
 

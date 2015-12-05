@@ -13,6 +13,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIImage+YS.h"
 #import "YSStatusFrame.h"
+#import "YSStatusToolBarView.h"
 @interface YSStatusTableViewCell ()
 
 //自己微博的控件
@@ -45,7 +46,7 @@
 
 //每条微博底部的工具条
 /** 配图的view */
-@property (nonatomic,weak)UIImageView *toolBarView;
+@property (nonatomic,weak)YSStatusToolBarView *toolBarView;
 
 @end
 
@@ -170,9 +171,7 @@
 -(void)setupStatusToolBarSubviews
 {
     /** 配图的view */
-    UIImageView *toolBarView = [[UIImageView alloc]init];
-    toolBarView.image = [UIImage resizeImageWithName:@"timeline_card_bottom_background"];
-    toolBarView.highlightedImage = [UIImage resizeImageWithName:@"timeline_card_bottom_background_highlighted"];
+    YSStatusToolBarView *toolBarView = [[YSStatusToolBarView alloc]init];
     [self.contentView addSubview:toolBarView];
     self.toolBarView = toolBarView;
 }

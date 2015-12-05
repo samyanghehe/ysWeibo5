@@ -11,6 +11,7 @@
 		5A1A4E101C1336A200AF0817 /* UIBarButtonItem+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E0D1C1336A200AF0817 /* UIBarButtonItem+YS.m */; };
 		5A1A4E111C1336A200AF0817 /* UIImage+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E0F1C1336A200AF0817 /* UIImage+YS.m */; };
 		5A1A4E141C1336C700AF0817 /* NSDate+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E131C1336C700AF0817 /* NSDate+YS.m */; };
+		5A1A4E211C1336C700AF0817 /* YSStatusToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E201C1336C700AF0817 /* YSStatusToolBarView.m */; };
 		5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */; };
 		5A5D58D61C11CECF006B05AA /* YSStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */; };
 		5AA472F51C106DEC00172B40 /* YSaccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F41C106DEC00172B40 /* YSaccount.m */; };
@@ -92,6 +93,8 @@
 		5A1A4E0F1C1336A200AF0817 /* UIImage+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YS.m"; sourceTree = "<group>"; };
 		5A1A4E121C1336C700AF0817 /* NSDate+YS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YS.h"; sourceTree = "<group>"; };
 		5A1A4E131C1336C700AF0817 /* NSDate+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YS.m"; sourceTree = "<group>"; };
+		5A1A4E1F1C1336C700AF0817 /* YSStatusToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusToolBarView.h; sourceTree = "<group>"; };
+		5A1A4E201C1336C700AF0817 /* YSStatusToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusToolBarView.m; sourceTree = "<group>"; };
 		5A5D58D11C11C2AE006B05AA /* YSStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusTableViewCell.h; sourceTree = "<group>"; };
 		5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTableViewCell.m; sourceTree = "<group>"; };
 		5A5D58D41C11CECF006B05AA /* YSStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusFrame.h; sourceTree = "<group>"; };
@@ -536,6 +539,8 @@
 				5AE4764F1C0E442500A8A128 /* YStitleButton.m */,
 				5A5D58D11C11C2AE006B05AA /* YSStatusTableViewCell.h */,
 				5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */,
+				5A1A4E1F1C1336C700AF0817 /* YSStatusToolBarView.h */,
+				5A1A4E201C1336C700AF0817 /* YSStatusToolBarView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -808,6 +813,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1A4E211C1336C700AF0817 /* YSStatusToolBarView.m in Sources */,
 				5ABEB0051C0B94640020C597 /* YSmeViewController.m in Sources */,
 				5AA473961C109D6900172B40 /* SDWebImagePrefetcher.m in Sources */,
 				5AA4738E1C109D6900172B40 /* MKAnnotationView+WebCache.m in Sources */,
