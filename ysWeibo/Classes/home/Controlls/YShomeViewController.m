@@ -38,10 +38,10 @@
     YSaccount *account = [YSaccountTool account];
     
     param[@"access_token"] = account.access_token;
-//    param[@"count"] = @1;
+//    param[@"count"] = @2;
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
-//        NSLog(@"%@",responseObject[@"statuses"]);
+        //NSLog(@"%@",responseObject[@"statuses"]);
         //高级技术.运行时.字典转模型
         NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
         NSMutableArray *statusFrameArray = [NSMutableArray array];
@@ -68,6 +68,7 @@
     [titleButton addTarget:self action:@selector(changeTitleImage:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
     self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 -(void)changeTitleImage:(YStitleButton *)button
 {

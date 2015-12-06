@@ -12,6 +12,9 @@
 		5A1A4E111C1336A200AF0817 /* UIImage+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E0F1C1336A200AF0817 /* UIImage+YS.m */; };
 		5A1A4E141C1336C700AF0817 /* NSDate+YS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E131C1336C700AF0817 /* NSDate+YS.m */; };
 		5A1A4E211C1336C700AF0817 /* YSStatusToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E201C1336C700AF0817 /* YSStatusToolBarView.m */; };
+		5A1A4E241C13862B00AF0817 /* YSRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E231C13862B00AF0817 /* YSRetweetView.m */; };
+		5A1A4E271C13892200AF0817 /* YSStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E261C13892200AF0817 /* YSStatusTopView.m */; };
+		5A1A4E2A1C1396C100AF0817 /* YSPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E291C1396C100AF0817 /* YSPhoto.m */; };
 		5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */; };
 		5A5D58D61C11CECF006B05AA /* YSStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */; };
 		5AA472F51C106DEC00172B40 /* YSaccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F41C106DEC00172B40 /* YSaccount.m */; };
@@ -95,6 +98,12 @@
 		5A1A4E131C1336C700AF0817 /* NSDate+YS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YS.m"; sourceTree = "<group>"; };
 		5A1A4E1F1C1336C700AF0817 /* YSStatusToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusToolBarView.h; sourceTree = "<group>"; };
 		5A1A4E201C1336C700AF0817 /* YSStatusToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusToolBarView.m; sourceTree = "<group>"; };
+		5A1A4E221C13862B00AF0817 /* YSRetweetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRetweetView.h; sourceTree = "<group>"; };
+		5A1A4E231C13862B00AF0817 /* YSRetweetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRetweetView.m; sourceTree = "<group>"; };
+		5A1A4E251C13892200AF0817 /* YSStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusTopView.h; sourceTree = "<group>"; };
+		5A1A4E261C13892200AF0817 /* YSStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTopView.m; sourceTree = "<group>"; };
+		5A1A4E281C1396C100AF0817 /* YSPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhoto.h; sourceTree = "<group>"; };
+		5A1A4E291C1396C100AF0817 /* YSPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhoto.m; sourceTree = "<group>"; };
 		5A5D58D11C11C2AE006B05AA /* YSStatusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusTableViewCell.h; sourceTree = "<group>"; };
 		5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTableViewCell.m; sourceTree = "<group>"; };
 		5A5D58D41C11CECF006B05AA /* YSStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusFrame.h; sourceTree = "<group>"; };
@@ -528,6 +537,8 @@
 				5AA473A01C10A2DF00172B40 /* YSUser.m */,
 				5A5D58D41C11CECF006B05AA /* YSStatusFrame.h */,
 				5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */,
+				5A1A4E281C1396C100AF0817 /* YSPhoto.h */,
+				5A1A4E291C1396C100AF0817 /* YSPhoto.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -541,6 +552,10 @@
 				5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */,
 				5A1A4E1F1C1336C700AF0817 /* YSStatusToolBarView.h */,
 				5A1A4E201C1336C700AF0817 /* YSStatusToolBarView.m */,
+				5A1A4E221C13862B00AF0817 /* YSRetweetView.h */,
+				5A1A4E231C13862B00AF0817 /* YSRetweetView.m */,
+				5A1A4E251C13892200AF0817 /* YSStatusTopView.h */,
+				5A1A4E261C13892200AF0817 /* YSStatusTopView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -846,6 +861,7 @@
 				5AA473DF1C10AF1900172B40 /* NSObject+MJKeyValue.m in Sources */,
 				5ADE6CBD1C0B7F8A00A78412 /* AppDelegate.m in Sources */,
 				5AA473921C109D6900172B40 /* SDWebImageDecoder.m in Sources */,
+				5A1A4E2A1C1396C100AF0817 /* YSPhoto.m in Sources */,
 				5AA473D91C10AF1900172B40 /* MJFoundation.m in Sources */,
 				5AA473DD1C10AF1900172B40 /* NSObject+MJClass.m in Sources */,
 				5AA473951C109D6900172B40 /* SDWebImageManager.m in Sources */,
@@ -855,6 +871,7 @@
 				5ADE6CBA1C0B7F8A00A78412 /* main.m in Sources */,
 				5ABEB00F1C0BB1D60020C597 /* YStabBarButton.m in Sources */,
 				5AA473941C109D6900172B40 /* SDWebImageDownloaderOperation.m in Sources */,
+				5A1A4E271C13892200AF0817 /* YSStatusTopView.m in Sources */,
 				5AA473321C10871B00172B40 /* AFHTTPRequestOperationManager.m in Sources */,
 				5AE476471C0DEC6600A8A128 /* YSNavgationController.m in Sources */,
 				5ABEB0031C0B94640020C597 /* YSdiscoverViewController.m in Sources */,
@@ -873,6 +890,7 @@
 				5AA472F91C1079DA00172B40 /* YSaccountTool.m in Sources */,
 				5AA473341C10871B00172B40 /* AFNetworkReachabilityManager.m in Sources */,
 				5AA4739A1C109D6900172B40 /* UIImage+WebP.m in Sources */,
+				5A1A4E241C13862B00AF0817 /* YSRetweetView.m in Sources */,
 				5AA473D71C10AF1900172B40 /* MJDictionaryCache.m in Sources */,
 				5A1A4E101C1336A200AF0817 /* UIBarButtonItem+YS.m in Sources */,
 			);

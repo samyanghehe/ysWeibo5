@@ -1,7 +1,16 @@
 
 #import "YSStatus.h"
 #import "NSDate+YS.h"
+#import "MJExtension.h"
+#import "YSPhoto.h"
+
 @implementation YSStatus
+
++(NSDictionary *)mj_objectClassInArray
+{
+    return @{@"pic_urls" : [YSPhoto class]};
+}
+
 -(NSString *)created_at
 {
 //    NSLog(@"%@",_created_at);

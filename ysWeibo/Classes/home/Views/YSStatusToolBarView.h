@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YSStatus;
 @interface YSStatusToolBarView : UIImageView
-
+@property(nonatomic,strong)YSStatus *status;
 @end

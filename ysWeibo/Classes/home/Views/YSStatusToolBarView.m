@@ -8,10 +8,14 @@
 
 #import "YSStatusToolBarView.h"
 #import "UIImage+YS.h"
+#import "YSStatus.h"
 
 @interface YSStatusToolBarView()
 @property(nonatomic,strong)NSMutableArray *btns;
 @property(nonatomic,strong)NSMutableArray *dividers;
+@property(nonatomic,weak)UIButton * retweetBtn;
+@property(nonatomic,weak)UIButton * commentBtn;
+@property(nonatomic,weak)UIButton * attitudeBtn;
 @end
 @implementation YSStatusToolBarView
 
@@ -37,16 +41,16 @@
     if (self) {
         self.image = [UIImage resizeImageWithName:@"timeline_card_bottom_background"];
         self.highlightedImage = [UIImage resizeImageWithName:@"timeline_card_bottom_background_highlighted"];
-        [self setupButtonWithTitle:@"转发" image:@"timeline_icon_retweet" bgImage:@"timeline_card_leftbottom_highlighted"];
-        [self setupButtonWithTitle:@"评论" image:@"timeline_icon_comment" bgImage:@"timeline_card_middlebottom_highlighted"];
-        [self setupButtonWithTitle:@"赞" image:@"timeline_icon_unlike" bgImage:@"timeline_card_rightbottom_highlighted"];
+        self.retweetBtn = [self setupButtonWithTitle:@"转发" image:@"timeline_icon_retweet" bgImage:@"timeline_card_leftbottom_highlighted"];
+        self.commentBtn = [self setupButtonWithTitle:@"评论" image:@"timeline_icon_comment" bgImage:@"timeline_card_middlebottom_highlighted"];
+        self.attitudeBtn = [self setupButtonWithTitle:@"赞" image:@"timeline_icon_unlike" bgImage:@"timeline_card_rightbottom_highlighted"];
         [self setupDivider];
         [self setupDivider];
     }
     return self;
 }
 
--(void)setupButtonWithTitle:(NSString *)title image:(NSString *)image bgImage:(NSString *)bgImage
+-(UIButton *)setupButtonWithTitle:(NSString *)title image:(NSString *)image bgImage:(NSString *)bgImage
 {
     UIButton *button = [[UIButton alloc]init];
     [button setImage:[UIImage imageWithName:image] forState:UIControlStateNormal];
@@ -57,6 +61,7 @@
     button.titleLabel.font = [UIFont systemFontOfSize:13];
     [self addSubview:button];
     [self.btns addObject:button];
+    return button;
 }
 
 -(void)setupDivider
@@ -81,7 +86,7 @@
         CGFloat buttonX = index * buttonW;
         
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
-        NSLog(@"%@",NSStringFromCGRect(button.frame));
+//        NSLog(@"%@",NSStringFromCGRect(button.frame));
     }
     NSInteger dividerCount = self.dividers.count;
     for (int index =0; index<dividerCount; index++) {
@@ -92,6 +97,23 @@
         CGFloat dividerH = self.frame.size.height;
         CGFloat dividerX = (index+1) *buttonW;
         divider.frame = CGRectMake(dividerX, dividerY, dividerW, dividerH);
+    }
+}
+
+-(void)setStatus:(YSStatus *)status
+{
+    _status = status;
+    [self setupButton:self.retweetBtn title:@"转发" count:self.status.reposts_count];
+    [self setupButton:self.commentBtn title:@"评论" count:self.status.comments_count];
+    [self setupButton:self.attitudeBtn title:@"呵呵" count:self.status.attitudes_count];
+}
+
+-(void)setupButton:(UIButton *)button title:(NSString *)title count:(int)count
+{
+    if (count) {
+        [button setTitle:[NSString stringWithFormat:@"%d",count] forState:UIControlStateNormal];
+    } else {
+        [button setTitle:title forState:UIControlStateNormal];
     }
 }
 @end

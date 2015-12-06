@@ -36,7 +36,7 @@
 /**
  *  用户的配图
  */
-@property (nonatomic, copy) NSString *thumbnail_pic;
+@property (nonatomic, copy) NSArray *pic_urls;
 /**
  *  发表时间
  */

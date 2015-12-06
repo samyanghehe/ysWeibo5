@@ -86,7 +86,7 @@
     
 //    8. /** 配图的view */
 //    @property (nonatomic,assign ,readonly)CGRect PhotoViewF;
-    if (self.status.thumbnail_pic) {
+    if (self.status.pic_urls.count) {
         CGFloat photoViewWH = 70;
         CGFloat photoViewX = contentLabelX;
         CGFloat photoViewY = CGRectGetMaxY(_contentLabelF)+YSStatusCellBorder;
@@ -119,7 +119,7 @@
 
         //    812. /** 被转发微博配图的view */
         //    @property (nonatomic,assign ,readonly)CGRect retweetPhotoViewF;
-        if (self.status.retweeted_status.thumbnail_pic) {
+        if (self.status.retweeted_status.pic_urls.count) {
             CGFloat retweetPhotoViewWH = 70;
             CGFloat retweetPhotoViewX = retweetContentLabelX;
             CGFloat retweetPhotoViewY = CGRectGetMaxY(_retweetContentLabelF)+YSStatusCellBorder;
@@ -132,7 +132,7 @@
         //有转发微博
         topViewH = CGRectGetMaxY(_retweetViewF) + YSStatusCellBorder;
     }else{//没有转发微博
-        if (self.status.thumbnail_pic) {//有配图
+        if (self.status.pic_urls.count) {//有配图
             topViewH = CGRectGetMaxY(_photoViewF) + YSStatusCellBorder;
         }else{//没有配图
             topViewH = CGRectGetMaxY(_contentLabelF) +YSStatusCellBorder;
