@@ -47,6 +47,7 @@
         [self setupOriginalSubviews];
         //添加工具条子控件
         [self setupStatusToolBarSubviews];
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }

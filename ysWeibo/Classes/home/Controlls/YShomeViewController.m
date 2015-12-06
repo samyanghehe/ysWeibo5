@@ -21,24 +21,45 @@
 #import "YSStatusFrame.h"
 #import "YSStatusTableViewCell.h"
 @interface YShomeViewController()
-@property(nonatomic,strong)NSArray *statuseFrames;
+@property(nonatomic,strong)NSMutableArray *statuseFrames;
 @end
 @implementation YShomeViewController
+
+-(NSMutableArray *)statuseFrames
+{
+    if (_statuseFrames == nil) {
+        _statuseFrames = [NSMutableArray array];
+    }
+    return _statuseFrames;
+}
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupRefresh];
     [self setUpNavBar];
-    [self setUpWeiboList];
 }
--(void)setUpWeiboList
+
+-(void)setupRefresh
+{
+    UIRefreshControl *refresh = [[UIRefreshControl alloc]init];
+    [refresh addTarget:self action:@selector(refreshControlValueChange:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refresh];
+    [self refreshControlValueChange:refresh];
+}
+
+-(void)refreshControlValueChange:(UIRefreshControl *)refresh
 {
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     YSaccount *account = [YSaccountTool account];
     
     param[@"access_token"] = account.access_token;
-//    param[@"count"] = @2;
+    //    param[@"count"] = @2;
+    if (self.statuseFrames.count) {
+        YSStatusFrame *statusFrame = self.statuseFrames[0];
+        param[@"since_id"] = statusFrame.status.idstr;
+    }
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *dictArray = responseObject[@"statuses"];
         //NSLog(@"%@",responseObject[@"statuses"]);
@@ -50,13 +71,17 @@
             statusFrame.status = status;
             [statusFrameArray addObject:statusFrame];
         }
+        [statusFrameArray addObjectsFromArray:_statuseFrames];
         _statuseFrames = statusFrameArray;
         
         [self.tableView reloadData];
+        [refresh endRefreshing];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-       
+        [refresh endRefreshing];
     }];
+
 }
+
 -(void)setUpNavBar
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithNormalImage:@"navigationbar_friendsearch" HighlightedImage:@"navigationbar_friendsearch_highlighted" addTarget:self action:@selector(leftItemClick)];

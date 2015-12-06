@@ -44,6 +44,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
 //        self.contentView.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1.0];
         self.image = [UIImage resizeImageWithName:@"timeline_card_top_background"];
         self.highlightedImage = [UIImage resizeImageWithName:@"timeline_card_top_background_highlighted"];

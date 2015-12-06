@@ -20,6 +20,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
         self.image = [UIImage resizeImageWithName:@"timeline_retweet_background" left:0.9 top:0.5];
         /** 昵称的label */
         UILabel *retweetNameLabel = [[UILabel alloc]init];

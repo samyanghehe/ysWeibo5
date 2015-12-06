@@ -10,6 +10,12 @@
 #define IWPhotoMargin 10
 #import "YSPhotosView.h"
 #import "YSPhotoView.h"
+#import "YSPhoto.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "MJPhotoBrowser.h"
+#import "MJPhoto.h"
+#import "DXAlertView.h"
 @implementation YSPhotosView
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -18,13 +24,39 @@
     if (self) {
         for (int i = 0; i<9; i++) {
             YSPhotoView *photoView = [[YSPhotoView alloc]init];
-            
+            photoView.userInteractionEnabled = YES;
+            UITapGestureRecognizer *tapGestureR = [UITapGestureRecognizer new];
+            [tapGestureR addTarget:self action:@selector(photosTap:)];
+            [photoView addGestureRecognizer:tapGestureR];
+            photoView.tag = i;
             [self addSubview:photoView];
         }
     }
     return self;
 }
 
+-(void)photosTap:(UITapGestureRecognizer *)tapGestureR
+{
+    int count = self.photos.count;
+    // 1.封装图片数据
+    NSMutableArray *photos = [NSMutableArray arrayWithCapacity:count];
+    for (int i = 0; i<count; i++) {
+        // 替换为中等尺寸图片
+        YSPhoto *photo = self.photos[i];
+        NSString *url = [photo.thumbnail_pic stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"large"];
+        MJPhoto *MJphoto = [[MJPhoto alloc] init];
+        MJphoto.url = [NSURL URLWithString:url]; // 图片路径
+        MJphoto.srcImageView = self.subviews[i]; // 来源于哪个UIImageView
+        [photos addObject:MJphoto];
+    }
+
+    // 2.显示相册
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.currentPhotoIndex = tapGestureR.view.tag; // 弹出相册时显示的第一张图片是？
+    browser.photos = photos; // 设置所有的图片
+    [browser show];
+
+}
 -(void)setPhotos:(NSArray *)photos
 {
     _photos = photos;
