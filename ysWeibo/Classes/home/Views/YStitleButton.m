@@ -27,8 +27,8 @@
         self.imageView.contentMode = UIViewContentModeCenter;
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.adjustsImageWhenHighlighted = NO;
-        self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
-        [self setTitle:@"用户名" forState:UIControlStateNormal];
+//        self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
+//        [self setTitle:@"用户名" forState:UIControlStateNormal];
     }
     
     return self;
@@ -51,6 +51,16 @@
 
 
     return CGRectMake(titleX, titleY, titleW, titleH);
+}
+
+-(void)setTitle:(NSString *)title forState:(UIControlState)state
+{
+    CGRect frame = self.frame;
+    CGFloat frameW = [title sizeWithFont:self.titleLabel.font].width + YStitleButtonImageW + 5;
+    frame.size.width = frameW;
+    self.frame = frame;
+    [super setTitle:title forState:state];
+    
 }
 
 @end
