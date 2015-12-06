@@ -76,10 +76,39 @@
         
         [self.tableView reloadData];
         [refresh endRefreshing];
+        [self showTipsWithStatusCount:statusArray.count];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [refresh endRefreshing];
     }];
 
+}
+
+-(void)showTipsWithStatusCount:(int)count
+{
+    UIButton *tipBtn = [[UIButton alloc]init];
+    [self.navigationController.view insertSubview:tipBtn belowSubview:self.navigationController.navigationBar];
+    CGFloat tipBtnX = 30;
+    CGFloat tipBtnH = 30;
+    CGFloat tipBtnY = CGRectGetMaxY(self.navigationController.navigationBar.frame) - tipBtnH;
+    CGFloat tipBtnW = self.navigationController.view.frame.size.width - 2*tipBtnX;
+    tipBtn.frame = CGRectMake(tipBtnX, tipBtnY, tipBtnW, tipBtnH);
+    [tipBtn setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:0.8]];
+    [tipBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    if (count>0) {
+        NSString *title = [NSString stringWithFormat:@"%d条新微博",count];
+        [tipBtn setTitle:title forState:UIControlStateNormal];
+    } else {
+        [tipBtn setTitle:@"没有新微博" forState:UIControlStateNormal];
+    }
+    [UIView animateWithDuration:0.5 animations:^{
+        tipBtn.transform = CGAffineTransformMakeTranslation(0, tipBtnH +2);
+    } completion:^(BOOL finished) {
+        [UIView animateKeyframesWithDuration:0.5 delay:1.0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+            tipBtn.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [tipBtn removeFromSuperview];
+        }];
+    }];
 }
 
 -(void)setUpNavBar
