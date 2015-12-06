@@ -13,6 +13,7 @@
 #import "YSStatusFrame.h"
 #import "UIImageView+WebCache.h"
 #import "YSPhoto.h"
+#import "YSPhotosView.h"
 @implementation YSRetweetView
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -36,9 +37,9 @@
         self.retweetContentLabel = retweetContentLabel;
         
         /** 配图的view */
-        UIImageView *retweetPhotoView = [[UIImageView alloc]init];
-        [self addSubview:retweetPhotoView];
-        self.retweetPhotoView = retweetPhotoView;
+        YSPhotosView *retweetPhotosView = [[YSPhotosView alloc]init];
+        [self addSubview:retweetPhotosView];
+        self.retweetPhotosView = retweetPhotosView;
     }
     
     return self;
@@ -62,12 +63,11 @@
     // 8.配图
     if(retweetStatus.pic_urls.count){
         //            NSLog(@"%@",retweetStatus.thumbnail_pic);
-        self.retweetPhotoView.hidden = NO;
-        self.retweetPhotoView.frame = self.statusFrame.retweetPhotoViewF;
-        YSPhoto *photo = retweetStatus.pic_urls[0];
-        [self.retweetPhotoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        self.retweetPhotosView.hidden = NO;
+        self.retweetPhotosView.frame = self.statusFrame.retweetPhotosViewF;
+        self.retweetPhotosView.photos = retweetStatus.pic_urls;
     }else{
-        self.retweetPhotoView.hidden = YES;
+        self.retweetPhotosView.hidden = YES;
     }
 }
 @end

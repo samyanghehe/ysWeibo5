@@ -17,6 +17,8 @@
 		5A1A4E2A1C1396C100AF0817 /* YSPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1A4E291C1396C100AF0817 /* YSPhoto.m */; };
 		5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */; };
 		5A5D58D61C11CECF006B05AA /* YSStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */; };
+		5A8A51061C146BDC00A569D2 /* YSPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51051C146BDC00A569D2 /* YSPhotoView.m */; };
+		5A8A51091C14702D00A569D2 /* YSPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51081C14702D00A569D2 /* YSPhotosView.m */; };
 		5AA472F51C106DEC00172B40 /* YSaccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F41C106DEC00172B40 /* YSaccount.m */; };
 		5AA472F91C1079DA00172B40 /* YSaccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F81C1079DA00172B40 /* YSaccountTool.m */; };
 		5AA472FD1C107DF900172B40 /* YSweiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472FC1C107DF900172B40 /* YSweiboTool.m */; };
@@ -108,6 +110,10 @@
 		5A5D58D21C11C2AE006B05AA /* YSStatusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTableViewCell.m; sourceTree = "<group>"; };
 		5A5D58D41C11CECF006B05AA /* YSStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSStatusFrame.h; sourceTree = "<group>"; };
 		5A5D58D51C11CECF006B05AA /* YSStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusFrame.m; sourceTree = "<group>"; };
+		5A8A51041C146BDC00A569D2 /* YSPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotoView.h; sourceTree = "<group>"; };
+		5A8A51051C146BDC00A569D2 /* YSPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotoView.m; sourceTree = "<group>"; };
+		5A8A51071C14702D00A569D2 /* YSPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotosView.h; sourceTree = "<group>"; };
+		5A8A51081C14702D00A569D2 /* YSPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotosView.m; sourceTree = "<group>"; };
 		5AA472F31C106DEC00172B40 /* YSaccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccount.h; sourceTree = "<group>"; };
 		5AA472F41C106DEC00172B40 /* YSaccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSaccount.m; sourceTree = "<group>"; };
 		5AA472F71C1079DA00172B40 /* YSaccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccountTool.h; sourceTree = "<group>"; };
@@ -556,6 +562,10 @@
 				5A1A4E231C13862B00AF0817 /* YSRetweetView.m */,
 				5A1A4E251C13892200AF0817 /* YSStatusTopView.h */,
 				5A1A4E261C13892200AF0817 /* YSStatusTopView.m */,
+				5A8A51041C146BDC00A569D2 /* YSPhotoView.h */,
+				5A8A51051C146BDC00A569D2 /* YSPhotoView.m */,
+				5A8A51071C14702D00A569D2 /* YSPhotosView.h */,
+				5A8A51081C14702D00A569D2 /* YSPhotosView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -867,6 +877,7 @@
 				5AA473951C109D6900172B40 /* SDWebImageManager.m in Sources */,
 				5ABA505C1C0F0D0F00162113 /* YSNewFeatureViewController.m in Sources */,
 				5A5D58D31C11C2AE006B05AA /* YSStatusTableViewCell.m in Sources */,
+				5A8A51061C146BDC00A569D2 /* YSPhotoView.m in Sources */,
 				5ABEB0061C0B94640020C597 /* YSmessageViewController.m in Sources */,
 				5ADE6CBA1C0B7F8A00A78412 /* main.m in Sources */,
 				5ABEB00F1C0BB1D60020C597 /* YStabBarButton.m in Sources */,
@@ -882,6 +893,7 @@
 				5AA473421C10874800172B40 /* MBProgressHUD.m in Sources */,
 				5AA473371C10871B00172B40 /* AFURLRequestSerialization.m in Sources */,
 				5AA4739E1C10A2D000172B40 /* YSStatus.m in Sources */,
+				5A8A51091C14702D00A569D2 /* YSPhotosView.m in Sources */,
 				5AA473971C109D6900172B40 /* UIButton+WebCache.m in Sources */,
 				5AA473391C10871B00172B40 /* AFURLSessionManager.m in Sources */,
 				5AA473351C10871B00172B40 /* AFSecurityPolicy.m in Sources */,

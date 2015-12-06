@@ -37,7 +37,7 @@
 /** 会员的view */
 @property (nonatomic,assign ,readonly)CGRect vipViewF;
 /** 配图的view */
-@property (nonatomic,assign ,readonly)CGRect photoViewF;
+@property (nonatomic,assign ,readonly)CGRect photosViewF;
 /** 昵称的label */
 @property (nonatomic,assign ,readonly)CGRect nameLabelF;
 /** 发表时间的label */
@@ -55,7 +55,7 @@
 /** 正文的label */
 @property (nonatomic,assign ,readonly)CGRect retweetContentLabelF;
 /** 配图的view */
-@property (nonatomic,assign ,readonly)CGRect retweetPhotoViewF;
+@property (nonatomic,assign ,readonly)CGRect retweetPhotosViewF;
 
 //每条微博底部的工具条
 /** 配图的view */

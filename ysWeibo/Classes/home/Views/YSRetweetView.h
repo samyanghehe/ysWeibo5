@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class YSStatusFrame;
+@class YSPhotosView;
 @interface YSRetweetView : UIImageView
 
 
@@ -16,7 +17,7 @@
 /** 正文的label */
 @property (nonatomic,weak)UILabel *retweetContentLabel;
 /** 配图的view */
-@property (nonatomic,weak)UIImageView *retweetPhotoView;
+@property (nonatomic,weak)YSPhotosView *retweetPhotosView;
 
 @property (nonatomic,strong)YSStatusFrame *statusFrame;
 @end

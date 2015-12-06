@@ -14,6 +14,7 @@
 #import "UIImage+YS.h"
 #import "YSRetweetView.h"
 #import "YSPhoto.h"
+#import "YSPhotosView.h"
 @interface YSStatusTopView()
 
 /** 头像的view */
@@ -21,7 +22,7 @@
 /** 会员的view */
 @property (nonatomic,weak)UIImageView *vipView;
 /** 配图的view */
-@property (nonatomic,weak)UIImageView *photoView;
+@property (nonatomic,weak)YSPhotosView *photosView;
 /** 昵称的label */
 @property (nonatomic,weak)UILabel *nameLabel;
 /** 发表时间的label */
@@ -61,10 +62,10 @@
         self.vipView = vipView;
         
         /** 配图的view */
-        UIImageView *photoView = [[UIImageView alloc]init];
-        photoView.backgroundColor = [UIColor clearColor];
-        [self addSubview:photoView];
-        self.photoView = photoView;
+        YSPhotosView *photosView = [[YSPhotosView alloc]init];
+        photosView.backgroundColor = [UIColor clearColor];
+        [self addSubview:photosView];
+        self.photosView = photosView;
         
         /** 昵称的label */
         UILabel *nameLabel = [[UILabel alloc]init];
@@ -163,13 +164,12 @@
     // 8.配图
     if(status.pic_urls.count){
 //        NSLog(@"%d",status.pic_urls.count);
-        self.photoView.hidden = NO;
-        self.photoView.frame = self.statusFrame.photoViewF;
-        YSPhoto *photo = status.pic_urls[0];
-        [self.photoView setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+        self.photosView.hidden = NO;
+        self.photosView.frame = self.statusFrame.photosViewF;
+        self.photosView.photos = status.pic_urls;
     }else{
 //        NSLog(@"-----------");
-        self.photoView.hidden = YES;
+        self.photosView.hidden = YES;
     }
     
     YSStatus *retweetStatus = status.retweeted_status;
