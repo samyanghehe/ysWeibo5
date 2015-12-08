@@ -14,9 +14,10 @@
 #import "MBProgressHUD+MJ.h"
 #import "YSComposeToolBarView.h"
 
-@interface YSComposeViewController()<UITextViewDelegate>
+@interface YSComposeViewController()<UITextViewDelegate,YSComposeToolBarViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property(nonatomic,weak)YSComposeTextView *composeTextView;
 @property(nonatomic,weak)YSComposeToolBarView *toolBarView;
+@property(nonatomic,weak)UIImageView *imageView;
 @end
 @implementation YSComposeViewController
 
@@ -26,12 +27,22 @@
     [self setupNavigationItem];
     [self setupComposeTextView];
     [self setupToolBarView];
+    [self setupImageView];
     
+}
+
+-(void)setupImageView
+{
+    UIImageView *imageView = [[UIImageView alloc]init];
+    imageView.frame = CGRectMake(0, 100, 80, 80);
+    [self.composeTextView addSubview:imageView];
+    self.imageView = imageView;
 }
 
 -(void)setupToolBarView
 {
     YSComposeToolBarView *toolBarView = [[YSComposeToolBarView alloc]init];
+    toolBarView.delegate = self;
     CGFloat toolBarX = 0;
     CGFloat toolBarH = 44;
     CGFloat toolBarW = self.view.frame.size.width;
@@ -54,6 +65,57 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(composeTextViewDidChange) name:UITextViewTextDidChangeNotification object:composeTextView];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+}
+
+-(void)composeToolBarView:(YSComposeToolBarView *)toolBarView DidClickedWithType:(ComposeToolBarButtonType)type
+{
+    switch (type) {
+        case ComposeToolBarButtonTypeCamera:
+            [self clickCamera];
+            break;
+        case ComposeToolBarButtonTypePicture:
+            [self clickPhoto];
+            break;
+        case ComposeToolBarButtonTypeMention:
+            
+            break;
+        case ComposeToolBarButtonTypeTrend:
+            
+            break;
+        case ComposeToolBarButtonTypeEmotion:
+            
+            break;
+
+        default:
+            break;
+    }
+}
+
+
+-(void)clickPhoto
+{
+    UIImagePickerController *pic = [[UIImagePickerController alloc]init];
+    pic.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    pic.delegate = self;
+    [self presentViewController:pic animated:YES completion:nil];
+}
+
+
+
+-(void)clickCamera
+{
+    UIImagePickerController *pic = [[UIImagePickerController alloc]init];
+    pic.sourceType = UIImagePickerControllerSourceTypeCamera;
+    pic.delegate = self;
+    [self presentViewController:pic animated:YES completion:nil];
+    
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+//    NSLog(@"%@",info);
+    self.imageView.image = info[UIImagePickerControllerOriginalImage];
 }
 
 //userInfo = {
