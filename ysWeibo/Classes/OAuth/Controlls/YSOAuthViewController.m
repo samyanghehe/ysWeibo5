@@ -35,8 +35,8 @@
     NSRange range = [urlStr rangeOfString:@"?code="];
     if (range.location != NSNotFound) {
         NSString *code = [urlStr substringFromIndex:range.location + range.length];
-        NSLog(@"%@",code);
         [self accessTokenWithCode:code];
+        return NO;
     }
     
     return YES;
@@ -67,14 +67,13 @@
     parameters[@"code"] = code;
     parameters[@"redirect_uri"] = @"http://www.yangshun.date";
     [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
         [MBProgressHUD hideHUD];
         //归档
         YSaccount *account = [YSaccount accountWithDict:responseObject];
         [YSaccountTool saveAccount:account];
         [YSweiboTool chooseRootController];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@",error);
+
     }];
 }
 

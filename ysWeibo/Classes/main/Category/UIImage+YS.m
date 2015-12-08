@@ -5,9 +5,9 @@
 //  Created by ys on 15/11/29.
 //  Copyright (c) 2015年 ys. All rights reserved.
 //
-#define ios7 ( [[UIDevice currentDevice].systemVersion doubleValue]>7.0)
-#import "UIImage+YS.h"
 
+#import "UIImage+YS.h"
+#import "defineFile.h"
 @implementation UIImage (YS)
 +(UIImage *)imageWithName:(NSString *)name
 {

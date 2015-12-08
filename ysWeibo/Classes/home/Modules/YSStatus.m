@@ -16,6 +16,7 @@
 //    NSLog(@"%@",_created_at);
 //    return _created_at;
     NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    fmt.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
     NSDate *createdDate = [fmt dateFromString:_created_at];
     

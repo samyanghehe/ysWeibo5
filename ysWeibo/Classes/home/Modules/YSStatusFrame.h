@@ -9,23 +9,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "defineFile.h"
 @class YSStatus;
 
-#define YSStatusCellBorder 5
-/** 昵称的字体 */
-#define YSStatusNameFont [UIFont systemFontOfSize:15]
-/** 被转发微博作者昵称的字体 */
-#define YSRetweetNameFont YSStatusNameFont
-/** 时间的字体 */
-#define YSStatusTimeFont [UIFont systemFontOfSize:12]
-/** 来源的字体 */
-#define YSStatusSourceFont YSStatusTimeFont
-/** 正文的字体 */
-#define YSStatusContentFont [UIFont systemFontOfSize:13]
-/** 被转发微博正文的字体 */
-#define YSRetweetContentFont YSStatusContentFont
-/** 表格缝宽 */
-#define YSStatusTableBorder 7
 @interface YSStatusFrame : NSObject
 
 @property (nonatomic,strong)YSStatus *status;

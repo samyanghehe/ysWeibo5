@@ -5,9 +5,7 @@
 //  Created by ys on 15/12/6.
 //  Copyright (c) 2015年 ys. All rights reserved.
 //
-#define IWPhotoW 70
-#define IWPhotoH 70
-#define IWPhotoMargin 10
+#import "defineFile.h"
 #import "YSPhotosView.h"
 #import "YSPhotoView.h"
 #import "YSPhoto.h"

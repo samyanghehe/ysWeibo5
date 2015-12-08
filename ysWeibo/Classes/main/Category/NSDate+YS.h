@@ -16,4 +16,5 @@
 
 -(BOOL)isThisYear;
 -(NSDateComponents *)deltaWhthNow;
+-(NSDate *)dateWithYMD;
 @end

@@ -24,7 +24,13 @@
 
 -(BOOL)isYesterday
 {
-    return NO;
+    NSDate *nowDate = [[NSDate date] dateWithYMD];
+    NSDate *selfDate = [self dateWithYMD];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit unit = NSCalendarUnitDay;
+    NSDateComponents *comps = [calendar components:unit fromDate:selfDate toDate:nowDate options:0];
+    
+    return comps.day;
 }
 
 -(BOOL)isThisYear
@@ -45,5 +51,13 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond;
     return [calendar components:unit fromDate:self toDate:[NSDate date] options:0];
+}
+
+-(NSDate *)dateWithYMD
+{
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    NSString *str = [fmt stringFromDate:self];
+    return [fmt dateFromString:str];
 }
 @end

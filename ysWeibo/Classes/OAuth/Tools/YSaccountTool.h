@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YSaccount.h"
+#import "defineFile.h"
 @interface YSaccountTool : NSObject
 +(void)saveAccount:(YSaccount *)account;
 +(YSaccount *)account;

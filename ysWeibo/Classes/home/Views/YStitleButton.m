@@ -5,9 +5,10 @@
 //  Created by ys on 15/12/1.
 //  Copyright (c) 2015年 ys. All rights reserved.
 //
-#define YStitleButtonImageW 20
+
 #import "YStitleButton.h"
 #import "UIImage+YS.h"
+#import "defineFile.h"
 @interface YStitleButton()
 @end
 

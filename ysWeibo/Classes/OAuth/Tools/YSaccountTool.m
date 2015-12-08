@@ -5,7 +5,7 @@
 //  Created by ys on 15/12/3.
 //  Copyright (c) 2015年 ys. All rights reserved.
 //
-#define YSAccountFile [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]
+
 
 #import "YSaccountTool.h"
 #import "YSaccount.h"

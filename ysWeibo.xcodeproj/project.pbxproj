@@ -324,6 +324,7 @@
 		5ADE6CCD1C0B7F8A00A78412 /* ysWeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ysWeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADE6CD21C0B7F8A00A78412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADE6CD31C0B7F8A00A78412 /* ysWeiboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ysWeiboTests.m; sourceTree = "<group>"; };
+		5AE410251C16072400786FDE /* defineFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = defineFile.h; sourceTree = "<group>"; };
 		5AE476421C0DD2ED00A8A128 /* YSbadgeValueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSbadgeValueButton.h; sourceTree = "<group>"; };
 		5AE476431C0DD2ED00A8A128 /* YSbadgeValueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSbadgeValueButton.m; sourceTree = "<group>"; };
 		5AE476451C0DEC6600A8A128 /* YSNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNavgationController.h; sourceTree = "<group>"; };
@@ -812,6 +813,7 @@
 				5ABEAFF41C0B94640020C597 /* Controlls */,
 				5ABEAFF51C0B94640020C597 /* Modules */,
 				5ABEAFF61C0B94640020C597 /* Views */,
+				5AE410251C16072400786FDE /* defineFile.h */,
 			);
 			path = main;
 			sourceTree = "<group>";
