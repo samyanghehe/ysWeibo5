@@ -23,12 +23,13 @@
     UIBarButtonItem *item = [UIBarButtonItem appearance];
 //    [item setBackButtonBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 //    [item setBackButtonBackgroundImage:[UIImage imageWithName:@"navigationbar_button_background"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[UITextAttributeTextColor] = [UIColor orangeColor];
-    NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
-    dict2[UITextAttributeTextColor] = [UIColor grayColor];
-    [item setTitleTextAttributes:dict forState:UIControlStateNormal];
-    [item setTitleTextAttributes:dict2 forState:UIControlStateDisabled];
-    [item setTitleTextAttributes:dict forState:UIControlStateHighlighted];
+//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//    dict[NSForegroundColorAttributeName] = [UIColor redColor];
+//    NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
+//    dict2[NSForegroundColorAttributeName] = [UIColor grayColor];
+//   
+//    [item setTitleTextAttributes:dict2 forState:UIControlStateDisabled];
+//    [item setTitleTextAttributes:dict forState:UIControlStateHighlighted];
+//     [item setTitleTextAttributes:dict forState:UIControlStateNormal];
 }
 @end

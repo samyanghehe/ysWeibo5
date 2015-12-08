@@ -67,6 +67,8 @@
 		5A8A51B61C14F14700A569D2 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51A11C14F14700A569D2 /* UIScrollView+MJExtension.m */; };
 		5A8A51B71C14F14700A569D2 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51A31C14F14700A569D2 /* UIScrollView+MJRefresh.m */; };
 		5A8A51B81C14F14700A569D2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51A51C14F14700A569D2 /* UIView+MJExtension.m */; };
+		5A8A54BD1C17129F00DBDEB0 /* YSComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A54BC1C17129F00DBDEB0 /* YSComposeViewController.m */; };
+		5A8A54C01C171B0100DBDEB0 /* YSComposeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A54BF1C171B0100DBDEB0 /* YSComposeTextView.m */; };
 		5AA472F51C106DEC00172B40 /* YSaccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F41C106DEC00172B40 /* YSaccount.m */; };
 		5AA472F91C1079DA00172B40 /* YSaccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472F81C1079DA00172B40 /* YSaccountTool.m */; };
 		5AA472FD1C107DF900172B40 /* YSweiboTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA472FC1C107DF900172B40 /* YSweiboTool.m */; };
@@ -104,6 +106,7 @@
 		5ABEB0061C0B94640020C597 /* YSmessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB0001C0B94640020C597 /* YSmessageViewController.m */; };
 		5ABEB00C1C0BA16F0020C597 /* YStabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB00B1C0BA16F0020C597 /* YStabBarView.m */; };
 		5ABEB00F1C0BB1D60020C597 /* YStabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABEB00E1C0BB1D60020C597 /* YStabBarButton.m */; };
+		5AD374DF1C17641D006401CE /* YSComposeToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD374DE1C17641D006401CE /* YSComposeToolBarView.m */; };
 		5ADE6CBA1C0B7F8A00A78412 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE6CB91C0B7F8A00A78412 /* main.m */; };
 		5ADE6CBD1C0B7F8A00A78412 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE6CBC1C0B7F8A00A78412 /* AppDelegate.m */; };
 		5ADE6CC51C0B7F8A00A78412 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE6CC41C0B7F8A00A78412 /* Images.xcassets */; };
@@ -240,6 +243,10 @@
 		5A8A51A31C14F14700A569D2 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		5A8A51A41C14F14700A569D2 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		5A8A51A51C14F14700A569D2 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		5A8A54BB1C17129F00DBDEB0 /* YSComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSComposeViewController.h; sourceTree = "<group>"; };
+		5A8A54BC1C17129F00DBDEB0 /* YSComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSComposeViewController.m; sourceTree = "<group>"; };
+		5A8A54BE1C171B0100DBDEB0 /* YSComposeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSComposeTextView.h; sourceTree = "<group>"; };
+		5A8A54BF1C171B0100DBDEB0 /* YSComposeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSComposeTextView.m; sourceTree = "<group>"; };
 		5AA472F31C106DEC00172B40 /* YSaccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccount.h; sourceTree = "<group>"; };
 		5AA472F41C106DEC00172B40 /* YSaccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSaccount.m; sourceTree = "<group>"; };
 		5AA472F71C1079DA00172B40 /* YSaccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSaccountTool.h; sourceTree = "<group>"; };
@@ -315,6 +322,8 @@
 		5ABEB00B1C0BA16F0020C597 /* YStabBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YStabBarView.m; sourceTree = "<group>"; };
 		5ABEB00D1C0BB1D60020C597 /* YStabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YStabBarButton.h; sourceTree = "<group>"; };
 		5ABEB00E1C0BB1D60020C597 /* YStabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YStabBarButton.m; sourceTree = "<group>"; };
+		5AD374DD1C17641D006401CE /* YSComposeToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSComposeToolBarView.h; sourceTree = "<group>"; };
+		5AD374DE1C17641D006401CE /* YSComposeToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSComposeToolBarView.m; sourceTree = "<group>"; };
 		5ADE6CB41C0B7F8A00A78412 /* ysWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ysWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADE6CB81C0B7F8A00A78412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADE6CB91C0B7F8A00A78412 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -531,6 +540,43 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		5A8A54B71C17128800DBDEB0 /* compose */ = {
+			isa = PBXGroup;
+			children = (
+				5A8A54B81C17128800DBDEB0 /* Controlls */,
+				5A8A54B91C17128800DBDEB0 /* Modules */,
+				5A8A54BA1C17128800DBDEB0 /* Views */,
+			);
+			path = compose;
+			sourceTree = "<group>";
+		};
+		5A8A54B81C17128800DBDEB0 /* Controlls */ = {
+			isa = PBXGroup;
+			children = (
+				5A8A54BB1C17129F00DBDEB0 /* YSComposeViewController.h */,
+				5A8A54BC1C17129F00DBDEB0 /* YSComposeViewController.m */,
+			);
+			path = Controlls;
+			sourceTree = "<group>";
+		};
+		5A8A54B91C17128800DBDEB0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5A8A54BA1C17128800DBDEB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A8A54BE1C171B0100DBDEB0 /* YSComposeTextView.h */,
+				5A8A54BF1C171B0100DBDEB0 /* YSComposeTextView.m */,
+				5AD374DD1C17641D006401CE /* YSComposeToolBarView.h */,
+				5AD374DE1C17641D006401CE /* YSComposeToolBarView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5AA472F61C1079C700172B40 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,6 +751,7 @@
 		5ABEAFE61C0B94640020C597 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5A8A54B71C17128800DBDEB0 /* compose */,
 				5AB364E91C0F8FD6005417CA /* OAuth */,
 				5ABA50561C0F0CE200162113 /* newFeature */,
 				5ABEAFE71C0B94640020C597 /* discover */,
@@ -1100,6 +1147,7 @@
 				5AA473401C10874800172B40 /* MBProgressHUD+MJ.m in Sources */,
 				5A8A51AA1C14F14700A569D2 /* MJRefreshHeader.m in Sources */,
 				5A8A514D1C14AD3500A569D2 /* UIImage+MultiFormat.m in Sources */,
+				5A8A54BD1C17129F00DBDEB0 /* YSComposeViewController.m in Sources */,
 				5AA473DC1C10AF1900172B40 /* MJPropertyType.m in Sources */,
 				5A8A511E1C14AC9D00A569D2 /* MJPhotoView.m in Sources */,
 				5A8A51AB1C14F14700A569D2 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1133,7 +1181,9 @@
 				5A8A51491C14AD3500A569D2 /* SDWebImageManager.m in Sources */,
 				5ADE6CBA1C0B7F8A00A78412 /* main.m in Sources */,
 				5ABEB00F1C0BB1D60020C597 /* YStabBarButton.m in Sources */,
+				5AD374DF1C17641D006401CE /* YSComposeToolBarView.m in Sources */,
 				5A1A4E271C13892200AF0817 /* YSStatusTopView.m in Sources */,
+				5A8A54C01C171B0100DBDEB0 /* YSComposeTextView.m in Sources */,
 				5AA473321C10871B00172B40 /* AFHTTPRequestOperationManager.m in Sources */,
 				5A8A514C1C14AD3500A569D2 /* UIImage+GIF.m in Sources */,
 				5A8A51AD1C14F14700A569D2 /* MJRefreshAutoStateFooter.m in Sources */,

@@ -14,6 +14,7 @@
 #import "UIImage+YS.h"
 #import "YStabBarView.h"
 #import "YSNavgationController.h"
+#import "YSComposeViewController.h"
 
 @interface YStabBarController()<YStabBarViewDelegate>
 @property (nonatomic,strong)YStabBarView *customTabBar;
@@ -34,7 +35,15 @@
     //NSLog(@"%d---%d",from,to);
     self.selectedIndex = to;
 }
-
+-(void)tabBarViewDidClickPlusButton:(YStabBarView *)tabBarView
+{
+    YSComposeViewController *composeViewController = [[YSComposeViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:composeViewController];
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+    
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

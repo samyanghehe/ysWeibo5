@@ -12,12 +12,13 @@
 @optional
 
 -(void)tabBarView:(YStabBarView *)tabBarView DidSelectedButtonFrom:(int)from to:(int)to;
-
+-(void)tabBarViewDidClickPlusButton:(YStabBarView *)tabBarView;
 @end
 
 @interface YStabBarView : UIView
 
 @property(nonatomic,weak)id<YStabBarViewDelegate>delegate;
+
 -(void)addTabBarButtonWithItem:(UITabBarItem *)item;
 
 @end
