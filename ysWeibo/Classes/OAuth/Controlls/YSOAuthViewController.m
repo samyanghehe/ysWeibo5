@@ -7,7 +7,7 @@
 //
 
 #import "YSOAuthViewController.h"
-#import "AFNetworking.h"
+#import "YSHttpTool.h"
 #import "YSaccount.h"
 #import "YSaccountTool.h"
 #import "YSweiboTool.h"
@@ -58,23 +58,39 @@
 //redirect_uri 	true 	string 	回调地址，需需与注册应用里的回调地址一致。
 -(void)accessTokenWithCode:(NSString *)code
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"client_id"] = @"383938312";
     parameters[@"client_secret"] = @"3246c67b415bf2613e25581bc0f278a6";
     parameters[@"grant_type"] = @"authorization_code";
     parameters[@"code"] = code;
     parameters[@"redirect_uri"] = @"http://www.yangshun.date";
-    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [YSHttpTool postWithURL:@"https://api.weibo.com/oauth2/access_token" params:parameters success:^(id json) {
         [MBProgressHUD hideHUD];
         //归档
-        YSaccount *account = [YSaccount accountWithDict:responseObject];
+        YSaccount *account = [YSaccount accountWithDict:json];
         [YSaccountTool saveAccount:account];
         [YSweiboTool chooseRootController];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
+    } failure:^(NSError *error) {
+        [MBProgressHUD hideHUD];
     }];
+//
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//    parameters[@"client_id"] = @"383938312";
+//    parameters[@"client_secret"] = @"3246c67b415bf2613e25581bc0f278a6";
+//    parameters[@"grant_type"] = @"authorization_code";
+//    parameters[@"code"] = code;
+//    parameters[@"redirect_uri"] = @"http://www.yangshun.date";
+//    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [MBProgressHUD hideHUD];
+//        //归档
+//        YSaccount *account = [YSaccount accountWithDict:responseObject];
+//        [YSaccountTool saveAccount:account];
+//        [YSweiboTool chooseRootController];
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//
+//    }];
 }
 
 @end

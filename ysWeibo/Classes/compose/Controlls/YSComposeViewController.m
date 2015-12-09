@@ -8,16 +8,17 @@
 
 #import "YSComposeViewController.h"
 #import "YSComposeTextView.h"
-#import "AFNetworking.h"
+#import "YSHttpTool.h"
 #import "YSaccount.h"
 #import "YSaccountTool.h"
 #import "MBProgressHUD+MJ.h"
 #import "YSComposeToolBarView.h"
+#import "YSComposePhotosView.h"
 
 @interface YSComposeViewController()<UITextViewDelegate,YSComposeToolBarViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property(nonatomic,weak)YSComposeTextView *composeTextView;
 @property(nonatomic,weak)YSComposeToolBarView *toolBarView;
-@property(nonatomic,weak)UIImageView *imageView;
+@property(nonatomic,weak)YSComposePhotosView *photosView;
 @end
 @implementation YSComposeViewController
 
@@ -33,10 +34,14 @@
 
 -(void)setupImageView
 {
-    UIImageView *imageView = [[UIImageView alloc]init];
-    imageView.frame = CGRectMake(0, 100, 80, 80);
-    [self.composeTextView addSubview:imageView];
-    self.imageView = imageView;
+    YSComposePhotosView *photosView = [[YSComposePhotosView alloc]init];
+    [self.composeTextView addSubview:photosView];
+    CGFloat photosViewX = 0;
+    CGFloat photosViewY = 100;
+    CGFloat photosViewW = self.view.frame.size.width;
+    CGFloat photosViewH = self.view.frame.size.height;
+    photosView.frame = CGRectMake(photosViewX, photosViewY, photosViewW, photosViewH);
+    self.photosView = photosView;
 }
 
 -(void)setupToolBarView
@@ -115,18 +120,11 @@
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
 //    NSLog(@"%@",info);
-    self.imageView.image = info[UIImagePickerControllerOriginalImage];
+    UIImage * image = info[UIImagePickerControllerOriginalImage];
+    
+    [self.photosView addPhoto:image];
 }
 
-//userInfo = {
-//    UIKeyboardAnimationCurveUserInfoKey = 7;
-//    UIKeyboardAnimationDurationUserInfoKey = "0.25";
-//    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {320, 253}}";
-//    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {160, 606.5}";
-//    UIKeyboardCenterEndUserInfoKey = "NSPoint: {160, 353.5}";
-//    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 480}, {320, 253}}";
-//    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 227}, {320, 253}}";
-//}}
 
 -(void)keyboardWillHidden:(NSNotification *)noti
 {
@@ -186,18 +184,100 @@
 
 -(void)clickSend
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    if (self.photosView.subviews.count) {
+        [self sendTextWithImage];
+        
+    }else{
+        [self sendTextWithoutImage];
+    }
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void)sendTextWithoutImage
+{
+//    // 1.创建请求管理对象
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    // 2.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"status"] = self.composeTextView.text;
+//    params[@"access_token"] = [YSaccountTool account].access_token;
+//    
+//    // 3.发送请求
+//    [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params
+//      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//          [MBProgressHUD showSuccess:@"发送成功"];
+//      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//          [MBProgressHUD showError:@"发送失败"];
+//      }];
+        // 2.封装请求参数
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"status"] = self.composeTextView.text;
+        params[@"access_token"] = [YSaccountTool account].access_token;
+    [YSHttpTool postWithURL:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id json) {
+        [MBProgressHUD showSuccess:@"发送成功"];
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"发送失败"];
+    }];
+
+
+}
+
+-(void)sendTextWithImage
+{
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//    parameters[@"access_token"] = account.access_token;
+//    parameters[@"status"] = self.composeTextView.text;
+// 
+//    [manager POST:@"https://upload.api.weibo.com/2/statuses/upload.json" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//        
+//        NSArray *photos = self.photosView.photos;
+//        int i = 0;
+//        for (UIImage *image in photos) {
+//            i++;
+//            NSData *imageData = UIImageJPEGRepresentation(image, 0.4);
+//            NSString *imageName = [NSString stringWithFormat:@"image%d.jpg",i];
+//            [formData appendPartWithFileData:imageData name:@"pic" fileName:imageName mimeType:@"image/jpeg"];
+//        }
+//        
+//    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [MBProgressHUD showSuccess:@"发送成功"];
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [MBProgressHUD showError:@"发送失败"];
+//    }];
+//
+    
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     YSaccount *account = [YSaccountTool account];
     parameters[@"access_token"] = account.access_token;
     parameters[@"status"] = self.composeTextView.text;
-    [manager POST:@"https://api.weibo.com/2/statuses/update.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    
+    NSArray *photos = self.photosView.photos;
+    int i = 0;
+    NSMutableArray *formDataArray = [NSMutableArray array];
+    for (UIImage *image in photos) {
+        i++;
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.4);
+        NSString *imageName = [NSString stringWithFormat:@"image%d.jpg",i];
+        YSFormData *formData = [[YSFormData alloc]init];
+        formData.data = imageData;
+        formData.name = @"pic";
+        formData.fileName = imageName;
+        formData.mimeType = @"image/jpeg";
+        [formDataArray addObject:formData];
+    }
+    
+    [YSHttpTool postWithURL:@"https://upload.api.weibo.com/2/statuses/upload.json" params:parameters formDataArray:formDataArray success:^(id json) {
         [MBProgressHUD showSuccess:@"发送成功"];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
     }];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
+
 @end

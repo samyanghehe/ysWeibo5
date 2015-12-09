@@ -19,4 +19,5 @@
     self.navigationItem.titleView = searchBar;
 
 }
+
 @end

@@ -24,21 +24,17 @@
     imageView.image = [UIImage imageWithName:@"searchbar_textfield_search_icon"];
     imageView.contentMode = UIViewContentModeCenter;
     self.leftView = imageView;
+    self.leftView.frame = CGRectMake(0, 0,30, self.frame.size.height);
     self.font = [UIFont systemFontOfSize:15];
-    //    searchBar.placeholder = @"搜索";
     self.clearButtonMode = UITextFieldViewModeAlways;
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];
     attr[NSForegroundColorAttributeName] = [UIColor grayColor];
     self.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"搜索" attributes:attr];
+//    self.placeholder = @"搜索";
     self.leftViewMode = UITextFieldViewModeAlways;
     self.returnKeyType = UIReturnKeySearch;
     self.enablesReturnKeyAutomatically = YES;
     return self;
 }
 
--(void)layoutSubviews
-{
-    [super layoutSubviews];
-    self.leftView.frame = CGRectMake(0, 0,30, self.frame.size.height);
-}
 @end

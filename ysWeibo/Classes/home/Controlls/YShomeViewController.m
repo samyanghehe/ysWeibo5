@@ -11,7 +11,7 @@
 #import "UIImage+YS.h"
 #import "UIBarButtonItem+YS.h"
 #import "YStitleButton.h"
-#import "AFNetworking.h"
+#import "YSHttpTool.h"
 #import "YSaccountTool.h"
 #import "YSaccount.h"
 #import "UIImageView+WebCache.h"
@@ -22,8 +22,8 @@
 #import "YSStatusTableViewCell.h"
 #import "MJRefresh.h"
 #import "defineFile.h"
-
-static const CGFloat MJDuration = 2.0;
+#import "YSStatusTool.h"
+#import "YSHomeStatusParam.h"
 
 @interface YShomeViewController()
 @property(nonatomic,strong)YStitleButton *titleButton;
@@ -49,17 +49,31 @@ static const CGFloat MJDuration = 2.0;
 
 -(void)setupUserName
 {
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//    
+//    param[@"access_token"] = account.access_token;
+//
+//    param[@"uid"] = @(account.uid);
+//    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        YSUser *user = [YSUser mj_objectWithKeyValues:responseObject];
+//        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//    }];
+    
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     YSaccount *account = [YSaccountTool account];
     
     param[@"access_token"] = account.access_token;
-
+    
     param[@"uid"] = @(account.uid);
-    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        YSUser *user = [YSUser mj_objectWithKeyValues:responseObject];
+    
+    [YSHttpTool getWithURL:@"https://api.weibo.com/2/users/show.json" params:param success:^(id json) {
+        YSUser *user = [YSUser mj_objectWithKeyValues:json];
         [self.titleButton setTitle:user.name forState:UIControlStateNormal];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         
     }];
 
@@ -80,20 +94,59 @@ static const CGFloat MJDuration = 2.0;
 #pragma mark 上拉加载更多数据
 - (void)loadMoreData
 {
-    // 1.添加假数据
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//    
+//    param[@"access_token"] = account.access_token;
+//    param[@"count"] = @5;
+//    if (self.statuseFrames.count) {
+//        YSStatusFrame *statusFrame = [self.statuseFrames lastObject];
+//        long long idstring = [statusFrame.status.idstr longLongValue] - 1;
+//        param[@"max_id"] = @(idstring);
+//    }
+//    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSArray *dictArray = responseObject[@"statuses"];
+//        //NSLog(@"%@",responseObject[@"statuses"]);
+//        //高级技术.运行时.字典转模型
+//        NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+//        NSMutableArray *statusFrameArray = [NSMutableArray array];
+//        for (YSStatus *status in statusArray) {
+//            YSStatusFrame *statusFrame = [[YSStatusFrame alloc]init];
+//            statusFrame.status = status;
+//            [statusFrameArray addObject:statusFrame];
+//        }
+//        NSMutableArray *temp = _statuseFrames;
+//        [temp addObjectsFromArray:statusFrameArray];
+//        _statuseFrames = temp;
+//        
+//        [self.tableView reloadData];
+//        // 拿到当前的上拉刷新控件，结束刷新状态
+//        [self.tableView.mj_footer endRefreshing];
+//        [self showTipsWithStatusCount:statusArray.count];
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        // 拿到当前的上拉刷新控件，结束刷新状态
+//        [self.tableView.mj_footer endRefreshing];
+//    }];
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//
+//    param[@"access_token"] = account.access_token;
+//    param[@"count"] = @5;
+//    
+    YSHomeStatusParam *param = [[YSHomeStatusParam alloc]init];
     YSaccount *account = [YSaccountTool account];
+    param.access_token = account.access_token;
+//    param.count = @(5);
     
-    param[@"access_token"] = account.access_token;
-    param[@"count"] = @5;
     if (self.statuseFrames.count) {
         YSStatusFrame *statusFrame = [self.statuseFrames lastObject];
-        long long idstring = [statusFrame.status.idstr longLongValue] - 1;
-        param[@"max_id"] = @(idstring);
+        param.max_id = @([statusFrame.status.idstr longLongValue] - 1);
     }
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *dictArray = responseObject[@"statuses"];
+    
+    [YSStatusTool homeStatusWithParam:param success:^(id json) {
+        NSArray *dictArray = json[@"statuses"];
         //NSLog(@"%@",responseObject[@"statuses"]);
         //高级技术.运行时.字典转模型
         NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
@@ -106,36 +159,132 @@ static const CGFloat MJDuration = 2.0;
         NSMutableArray *temp = _statuseFrames;
         [temp addObjectsFromArray:statusFrameArray];
         _statuseFrames = temp;
-        
+
         [self.tableView reloadData];
         // 拿到当前的上拉刷新控件，结束刷新状态
         [self.tableView.mj_footer endRefreshing];
         [self showTipsWithStatusCount:statusArray.count];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // 拿到当前的上拉刷新控件，结束刷新状态
+
+
+    } failure:^(NSError *error) {
         [self.tableView.mj_footer endRefreshing];
     }];
+    
+//    [YSHttpTool getWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:param success:^(id json) {
+//        NSArray *dictArray = json[@"statuses"];
+//            //NSLog(@"%@",responseObject[@"statuses"]);
+//            //高级技术.运行时.字典转模型
+//            NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+//            NSMutableArray *statusFrameArray = [NSMutableArray array];
+//            for (YSStatus *status in statusArray) {
+//                YSStatusFrame *statusFrame = [[YSStatusFrame alloc]init];
+//                statusFrame.status = status;
+//                [statusFrameArray addObject:statusFrame];
+//            }
+//            NSMutableArray *temp = _statuseFrames;
+//            [temp addObjectsFromArray:statusFrameArray];
+//            _statuseFrames = temp;
+//    
+//            [self.tableView reloadData];
+//            // 拿到当前的上拉刷新控件，结束刷新状态
+//            [self.tableView.mj_footer endRefreshing];
+//            [self showTipsWithStatusCount:statusArray.count];
+//
+//    } failure:^(NSError *error) {
+//        [self.tableView.mj_footer endRefreshing];
+//    }];
+
 }
 
--(void)refreshFooter
-{
-    NSLog(@"footer");
-}
+//-(void)refreshFooter
+//{
+//    NSLog(@"footer");
+//}
 
 -(void)refreshControlValueChange:(UIRefreshControl *)refresh
 {
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    YSaccount *account = [YSaccountTool account];
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//    
+//    param[@"access_token"] = account.access_token;
+//    param[@"count"] = @5;
+//    if (self.statuseFrames.count) {
+//        YSStatusFrame *statusFrame = self.statuseFrames[0];
+//        param[@"since_id"] = statusFrame.status.idstr;
+//    }
+//    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSArray *dictArray = responseObject[@"statuses"];
+//        //NSLog(@"%@",responseObject[@"statuses"]);
+//        //高级技术.运行时.字典转模型
+//        NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+//        NSMutableArray *statusFrameArray = [NSMutableArray array];
+//        for (YSStatus *status in statusArray) {
+//            YSStatusFrame *statusFrame = [[YSStatusFrame alloc]init];
+//            statusFrame.status = status;
+//            [statusFrameArray addObject:statusFrame];
+//        }
+//        [statusFrameArray addObjectsFromArray:_statuseFrames];
+//        _statuseFrames = statusFrameArray;
+//        
+//        [self.tableView reloadData];
+//        [refresh endRefreshing];
+//        [self showTipsWithStatusCount:statusArray.count];
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [refresh endRefreshing];
+//    }];
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//    
+//    param[@"access_token"] = account.access_token;
+//    param[@"count"] = @5;
+//    if (self.statuseFrames.count) {
+//        YSStatusFrame *statusFrame = self.statuseFrames[0];
+//        param[@"since_id"] = statusFrame.status.idstr;
+//    }
+//
+//    [YSHttpTool getWithURL:@"https://api.weibo.com/2/statuses/home_timeline.json" params:param success:^(id json) {
+//            NSArray *dictArray = json[@"statuses"];
+//            //NSLog(@"%@",responseObject[@"statuses"]);
+//            //高级技术.运行时.字典转模型
+//            NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+//            NSMutableArray *statusFrameArray = [NSMutableArray array];
+//            for (YSStatus *status in statusArray) {
+//                YSStatusFrame *statusFrame = [[YSStatusFrame alloc]init];
+//                statusFrame.status = status;
+//                [statusFrameArray addObject:statusFrame];
+//            }
+//            [statusFrameArray addObjectsFromArray:_statuseFrames];
+//            _statuseFrames = statusFrameArray;
+//
+//            [self.tableView reloadData];
+//            [refresh endRefreshing];
+//            [self showTipsWithStatusCount:statusArray.count];
+//
+//    } failure:^(NSError *error) {
+//        [refresh endRefreshing];
+//    }];
+//
     
-    param[@"access_token"] = account.access_token;
-    param[@"count"] = @5;
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//
+//    param[@"access_token"] = account.access_token;
+//    param[@"count"] = @5;
+//    if (self.statuseFrames.count) {
+//        YSStatusFrame *statusFrame = self.statuseFrames[0];
+//        param[@"since_id"] = statusFrame.status.idstr;
+//    }
+    YSHomeStatusParam *param = [[YSHomeStatusParam alloc]init];
+    YSaccount *account = [YSaccountTool account];
+    param.access_token = account.access_token;
+    param.count = @(5);
     if (self.statuseFrames.count) {
         YSStatusFrame *statusFrame = self.statuseFrames[0];
-        param[@"since_id"] = statusFrame.status.idstr;
+        param.since_id = @([statusFrame.status.idstr longLongValue]);
     }
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *dictArray = responseObject[@"statuses"];
+    [YSStatusTool homeStatusWithParam:param success:^(id json) {
+        NSArray *dictArray = json[@"statuses"];
         //NSLog(@"%@",responseObject[@"statuses"]);
         //高级技术.运行时.字典转模型
         NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
@@ -147,14 +296,15 @@ static const CGFloat MJDuration = 2.0;
         }
         [statusFrameArray addObjectsFromArray:_statuseFrames];
         _statuseFrames = statusFrameArray;
-        
+
         [self.tableView reloadData];
         [refresh endRefreshing];
         [self showTipsWithStatusCount:statusArray.count];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+
+    } failure:^(NSError *error) {
         [refresh endRefreshing];
     }];
-
 }
 
 -(void)showTipsWithStatusCount:(int)count
