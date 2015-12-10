@@ -24,6 +24,8 @@
 #import "defineFile.h"
 #import "YSStatusTool.h"
 #import "YSHomeStatusParam.h"
+#import "YSHomeStatusResult.h"
+#import "YSUserInfoTool.h"
 
 @interface YShomeViewController()
 @property(nonatomic,strong)YStitleButton *titleButton;
@@ -62,19 +64,29 @@
 //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 //        
 //    }];
-    
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//    
+//    param[@"access_token"] = account.access_token;
+//    
+//    param[@"uid"] = @(account.uid);
+//    
+//    [YSHttpTool getWithURL:@"https://api.weibo.com/2/users/show.json" params:param success:^(id json) {
+//        YSUser *user = [YSUser mj_objectWithKeyValues:json];
+//        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+//    } failure:^(NSError *error) {
+//        
+//    }];
+    YSUserInfoParam *param = [[YSUserInfoParam alloc]init];
     YSaccount *account = [YSaccountTool account];
+    param.access_token = account.access_token;
+    param.uid = account.uid;
     
-    param[@"access_token"] = account.access_token;
-    
-    param[@"uid"] = @(account.uid);
-    
-    [YSHttpTool getWithURL:@"https://api.weibo.com/2/users/show.json" params:param success:^(id json) {
-        YSUser *user = [YSUser mj_objectWithKeyValues:json];
-        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+    [YSUserInfoTool userInfoWithParam:param success:^(YSUserInfoResult *result) {
+        [self.titleButton setTitle:result.name forState:UIControlStateNormal];
     } failure:^(NSError *error) {
-        
+        NSLog(@"%@",error);
     }];
 
 }
@@ -145,13 +157,13 @@
         param.max_id = @([statusFrame.status.idstr longLongValue] - 1);
     }
     
-    [YSStatusTool homeStatusWithParam:param success:^(id json) {
-        NSArray *dictArray = json[@"statuses"];
-        //NSLog(@"%@",responseObject[@"statuses"]);
-        //高级技术.运行时.字典转模型
-        NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+    [YSStatusTool homeStatusWithParam:param success:^(YSHomeStatusResult *result) {
+//        NSArray *dictArray = json[@"statuses"];
+//        //NSLog(@"%@",responseObject[@"statuses"]);
+//        //高级技术.运行时.字典转模型
+//        NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
         NSMutableArray *statusFrameArray = [NSMutableArray array];
-        for (YSStatus *status in statusArray) {
+        for (YSStatus *status in result.statuses) {
             YSStatusFrame *statusFrame = [[YSStatusFrame alloc]init];
             statusFrame.status = status;
             [statusFrameArray addObject:statusFrame];
@@ -163,7 +175,7 @@
         [self.tableView reloadData];
         // 拿到当前的上拉刷新控件，结束刷新状态
         [self.tableView.mj_footer endRefreshing];
-        [self showTipsWithStatusCount:statusArray.count];
+        [self showTipsWithStatusCount:result.statuses.count];
 
 
     } failure:^(NSError *error) {
@@ -283,13 +295,13 @@
         YSStatusFrame *statusFrame = self.statuseFrames[0];
         param.since_id = @([statusFrame.status.idstr longLongValue]);
     }
-    [YSStatusTool homeStatusWithParam:param success:^(id json) {
-        NSArray *dictArray = json[@"statuses"];
+    [YSStatusTool homeStatusWithParam:param success:^(YSHomeStatusResult *result) {
+//        NSArray *dictArray = json[@"statuses"];
         //NSLog(@"%@",responseObject[@"statuses"]);
         //高级技术.运行时.字典转模型
-        NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
+//        NSArray *statusArray = [YSStatus mj_objectArrayWithKeyValuesArray:dictArray];
         NSMutableArray *statusFrameArray = [NSMutableArray array];
-        for (YSStatus *status in statusArray) {
+        for (YSStatus *status in result.statuses) {
             YSStatusFrame *statusFrame = [[YSStatusFrame alloc]init];
             statusFrame.status = status;
             [statusFrameArray addObject:statusFrame];
@@ -299,8 +311,7 @@
 
         [self.tableView reloadData];
         [refresh endRefreshing];
-        [self showTipsWithStatusCount:statusArray.count];
-
+        [self showTipsWithStatusCount:result.statuses.count];
 
     } failure:^(NSError *error) {
         [refresh endRefreshing];

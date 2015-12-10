@@ -14,6 +14,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "YSComposeToolBarView.h"
 #import "YSComposePhotosView.h"
+#import "YSStatusTool.h"
 
 @interface YSComposeViewController()<UITextViewDelegate,YSComposeToolBarViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property(nonatomic,weak)YSComposeTextView *composeTextView;
@@ -213,15 +214,23 @@
 //          [MBProgressHUD showError:@"发送失败"];
 //      }];
         // 2.封装请求参数
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        params[@"status"] = self.composeTextView.text;
-        params[@"access_token"] = [YSaccountTool account].access_token;
-    [YSHttpTool postWithURL:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id json) {
+//        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//        params[@"status"] = self.composeTextView.text;
+//        params[@"access_token"] = [YSaccountTool account].access_token;
+//    [YSHttpTool postWithURL:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id json) {
+//        [MBProgressHUD showSuccess:@"发送成功"];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD showError:@"发送失败"];
+//    }];
+    YSSendStatusParam *param = [[YSSendStatusParam alloc]init];
+    
+    param.access_token = [YSaccountTool account].access_token;
+    param.status = self.composeTextView.text;
+    [YSStatusTool sendStatusWithParam:param success:^(YSSendStatusResult *result) {
         [MBProgressHUD showSuccess:@"发送成功"];
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
     }];
-
 
 }
 
@@ -251,12 +260,36 @@
 //        [MBProgressHUD showError:@"发送失败"];
 //    }];
 //
-    
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    YSaccount *account = [YSaccountTool account];
-    parameters[@"access_token"] = account.access_token;
-    parameters[@"status"] = self.composeTextView.text;
-    
+//    
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//    YSaccount *account = [YSaccountTool account];
+//    parameters[@"access_token"] = account.access_token;
+//    parameters[@"status"] = self.composeTextView.text;
+//    
+//    
+//    NSArray *photos = self.photosView.photos;
+//    int i = 0;
+//    NSMutableArray *formDataArray = [NSMutableArray array];
+//    for (UIImage *image in photos) {
+//        i++;
+//        NSData *imageData = UIImageJPEGRepresentation(image, 0.4);
+//        NSString *imageName = [NSString stringWithFormat:@"image%d.jpg",i];
+//        YSFormData *formData = [[YSFormData alloc]init];
+//        formData.data = imageData;
+//        formData.name = @"pic";
+//        formData.fileName = imageName;
+//        formData.mimeType = @"image/jpeg";
+//        [formDataArray addObject:formData];
+//    }
+//    
+//    [YSHttpTool postWithURL:@"https://upload.api.weibo.com/2/statuses/upload.json" params:parameters formDataArray:formDataArray success:^(id json) {
+//        [MBProgressHUD showSuccess:@"发送成功"];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD showError:@"发送失败"];
+//    }];
+    YSSendStatusParam *param = [[YSSendStatusParam alloc]init];
+    param.access_token = [YSaccountTool account].access_token;
+    param.status = self.composeTextView.text;
     
     NSArray *photos = self.photosView.photos;
     int i = 0;
@@ -273,11 +306,12 @@
         [formDataArray addObject:formData];
     }
     
-    [YSHttpTool postWithURL:@"https://upload.api.weibo.com/2/statuses/upload.json" params:parameters formDataArray:formDataArray success:^(id json) {
+    [YSStatusTool sendStatusWithParam:param formDataArray:formDataArray success:^(YSSendStatusResult *result) {
         [MBProgressHUD showSuccess:@"发送成功"];
     } failure:^(NSError *error) {
         [MBProgressHUD showError:@"发送失败"];
     }];
+
 }
 
 @end

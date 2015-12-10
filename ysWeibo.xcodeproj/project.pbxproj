@@ -43,11 +43,6 @@
 		5A8A514F1C14AD3500A569D2 /* UIImageView+MJWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A513E1C14AD3500A569D2 /* UIImageView+MJWebCache.m */; };
 		5A8A51501C14AD3500A569D2 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51401C14AD3500A569D2 /* UIImageView+WebCache.m */; };
 		5A8A51531C14ADA700A569D2 /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51521C14ADA700A569D2 /* MBProgressHUD+Add.m */; };
-		5A8A515B1C14B1F500A569D2 /* btn_close_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8A51551C14B1F500A569D2 /* btn_close_normal.png */; };
-		5A8A515C1C14B1F500A569D2 /* btn_close_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8A51561C14B1F500A569D2 /* btn_close_normal@2x.png */; };
-		5A8A515D1C14B1F500A569D2 /* btn_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8A51571C14B1F500A569D2 /* btn_close_selected.png */; };
-		5A8A515E1C14B1F500A569D2 /* btn_close_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8A51581C14B1F500A569D2 /* btn_close_selected@2x.png */; };
-		5A8A515F1C14B1F500A569D2 /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A515A1C14B1F500A569D2 /* DXAlertView.m */; };
 		5A8A51A61C14F14700A569D2 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A517C1C14F14700A569D2 /* MJRefreshAutoFooter.m */; };
 		5A8A51A71C14F14700A569D2 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A517E1C14F14700A569D2 /* MJRefreshBackFooter.m */; };
 		5A8A51A81C14F14700A569D2 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A51801C14F14700A569D2 /* MJRefreshComponent.m */; };
@@ -112,6 +107,7 @@
 		5AD4BF591C18A4DD0015E1A1 /* YSFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4BF581C18A4DD0015E1A1 /* YSFormData.m */; };
 		5AD4BF611C18D1000015E1A1 /* YSStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4BF601C18D1000015E1A1 /* YSStatusTool.m */; };
 		5AD4BF641C18D47B0015E1A1 /* YSHomeStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4BF631C18D47B0015E1A1 /* YSHomeStatusParam.m */; };
+		5AD4BF671C18E3F60015E1A1 /* YSHomeStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4BF661C18E3F60015E1A1 /* YSHomeStatusResult.m */; };
 		5ADE6CBA1C0B7F8A00A78412 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE6CB91C0B7F8A00A78412 /* main.m */; };
 		5ADE6CBD1C0B7F8A00A78412 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADE6CBC1C0B7F8A00A78412 /* AppDelegate.m */; };
 		5ADE6CC51C0B7F8A00A78412 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ADE6CC41C0B7F8A00A78412 /* Images.xcassets */; };
@@ -119,6 +115,13 @@
 		5AE476441C0DD2ED00A8A128 /* YSbadgeValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE476431C0DD2ED00A8A128 /* YSbadgeValueButton.m */; };
 		5AE476471C0DEC6600A8A128 /* YSNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE476461C0DEC6600A8A128 /* YSNavgationController.m */; };
 		5AE476501C0E442500A8A128 /* YStitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4764F1C0E442500A8A128 /* YStitleButton.m */; };
+		5AE4E9721C19A2260060C58B /* YSUserInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4E9711C19A2260060C58B /* YSUserInfoTool.m */; };
+		5AE4E9751C19A26F0060C58B /* YSUserInfoParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4E9741C19A26F0060C58B /* YSUserInfoParam.m */; };
+		5AE4E9781C19A2810060C58B /* YSUserInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4E9771C19A2810060C58B /* YSUserInfoResult.m */; };
+		5AE4E97B1C19AAF00060C58B /* YSSendStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4E97A1C19AAF00060C58B /* YSSendStatusParam.m */; };
+		5AE4E97E1C19AB040060C58B /* YSSendStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4E97D1C19AB040060C58B /* YSSendStatusResult.m */; };
+		5AE4E9811C19C03C0060C58B /* YSAccountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4E9801C19C03C0060C58B /* YSAccountParam.m */; };
+		5AE4E9841C19C05D0060C58B /* YSAccountResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE4E9831C19C05D0060C58B /* YSAccountResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,12 +207,6 @@
 		5A8A51401C14AD3500A569D2 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		5A8A51511C14ADA700A569D2 /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
 		5A8A51521C14ADA700A569D2 /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
-		5A8A51551C14B1F500A569D2 /* btn_close_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_normal.png; sourceTree = "<group>"; };
-		5A8A51561C14B1F500A569D2 /* btn_close_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_normal@2x.png"; sourceTree = "<group>"; };
-		5A8A51571C14B1F500A569D2 /* btn_close_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_selected.png; sourceTree = "<group>"; };
-		5A8A51581C14B1F500A569D2 /* btn_close_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_selected@2x.png"; sourceTree = "<group>"; };
-		5A8A51591C14B1F500A569D2 /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
-		5A8A515A1C14B1F500A569D2 /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
 		5A8A517B1C14F14600A569D2 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5A8A517C1C14F14700A569D2 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		5A8A517D1C14F14700A569D2 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -339,6 +336,8 @@
 		5AD4BF601C18D1000015E1A1 /* YSStatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSStatusTool.m; sourceTree = "<group>"; };
 		5AD4BF621C18D47B0015E1A1 /* YSHomeStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHomeStatusParam.h; sourceTree = "<group>"; };
 		5AD4BF631C18D47B0015E1A1 /* YSHomeStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHomeStatusParam.m; sourceTree = "<group>"; };
+		5AD4BF651C18E3F60015E1A1 /* YSHomeStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHomeStatusResult.h; sourceTree = "<group>"; };
+		5AD4BF661C18E3F60015E1A1 /* YSHomeStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHomeStatusResult.m; sourceTree = "<group>"; };
 		5ADE6CB41C0B7F8A00A78412 /* ysWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ysWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADE6CB81C0B7F8A00A78412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADE6CB91C0B7F8A00A78412 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -355,6 +354,20 @@
 		5AE476461C0DEC6600A8A128 /* YSNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNavgationController.m; sourceTree = "<group>"; };
 		5AE4764E1C0E442500A8A128 /* YStitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YStitleButton.h; sourceTree = "<group>"; };
 		5AE4764F1C0E442500A8A128 /* YStitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YStitleButton.m; sourceTree = "<group>"; };
+		5AE4E9701C19A2260060C58B /* YSUserInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoTool.h; sourceTree = "<group>"; };
+		5AE4E9711C19A2260060C58B /* YSUserInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoTool.m; sourceTree = "<group>"; };
+		5AE4E9731C19A26F0060C58B /* YSUserInfoParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoParam.h; sourceTree = "<group>"; };
+		5AE4E9741C19A26F0060C58B /* YSUserInfoParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoParam.m; sourceTree = "<group>"; };
+		5AE4E9761C19A2810060C58B /* YSUserInfoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoResult.h; sourceTree = "<group>"; };
+		5AE4E9771C19A2810060C58B /* YSUserInfoResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoResult.m; sourceTree = "<group>"; };
+		5AE4E9791C19AAF00060C58B /* YSSendStatusParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSSendStatusParam.h; sourceTree = "<group>"; };
+		5AE4E97A1C19AAF00060C58B /* YSSendStatusParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSSendStatusParam.m; sourceTree = "<group>"; };
+		5AE4E97C1C19AB040060C58B /* YSSendStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSSendStatusResult.h; sourceTree = "<group>"; };
+		5AE4E97D1C19AB040060C58B /* YSSendStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSSendStatusResult.m; sourceTree = "<group>"; };
+		5AE4E97F1C19C03C0060C58B /* YSAccountParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSAccountParam.h; sourceTree = "<group>"; };
+		5AE4E9801C19C03C0060C58B /* YSAccountParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSAccountParam.m; sourceTree = "<group>"; };
+		5AE4E9821C19C05D0060C58B /* YSAccountResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSAccountResult.h; sourceTree = "<group>"; };
+		5AE4E9831C19C05D0060C58B /* YSAccountResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSAccountResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,20 +459,6 @@
 				5A8A51401C14AD3500A569D2 /* UIImageView+WebCache.m */,
 			);
 			path = SDWebImage;
-			sourceTree = "<group>";
-		};
-		5A8A51541C14B1F500A569D2 /* DXAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				5A8A51551C14B1F500A569D2 /* btn_close_normal.png */,
-				5A8A51561C14B1F500A569D2 /* btn_close_normal@2x.png */,
-				5A8A51571C14B1F500A569D2 /* btn_close_selected.png */,
-				5A8A51581C14B1F500A569D2 /* btn_close_selected@2x.png */,
-				5A8A51591C14B1F500A569D2 /* DXAlertView.h */,
-				5A8A515A1C14B1F500A569D2 /* DXAlertView.m */,
-			);
-			name = DXAlertView;
-			path = Vendor;
 			sourceTree = "<group>";
 		};
 		5A8A51791C14F14600A569D2 /* MJRefresh */ = {
@@ -577,6 +576,10 @@
 		5A8A54B91C17128800DBDEB0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5AE4E9791C19AAF00060C58B /* YSSendStatusParam.h */,
+				5AE4E97A1C19AAF00060C58B /* YSSendStatusParam.m */,
+				5AE4E97C1C19AB040060C58B /* YSSendStatusResult.h */,
+				5AE4E97D1C19AB040060C58B /* YSSendStatusResult.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -621,7 +624,6 @@
 			children = (
 				5AD4BF331C18791C0015E1A1 /* AFNetworking */,
 				5A8A51791C14F14600A569D2 /* MJRefresh */,
-				5A8A51541C14B1F500A569D2 /* DXAlertView */,
 				5A8A511F1C14AD3500A569D2 /* SDWebImage */,
 				5A8A510A1C14AC9D00A569D2 /* MJPhotoBrowser */,
 				5AA473BF1C10AF1900172B40 /* MJExtension */,
@@ -699,6 +701,10 @@
 			children = (
 				5AA472F31C106DEC00172B40 /* YSaccount.h */,
 				5AA472F41C106DEC00172B40 /* YSaccount.m */,
+				5AE4E97F1C19C03C0060C58B /* YSAccountParam.h */,
+				5AE4E9801C19C03C0060C58B /* YSAccountParam.m */,
+				5AE4E9821C19C05D0060C58B /* YSAccountResult.h */,
+				5AE4E9831C19C05D0060C58B /* YSAccountResult.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -824,6 +830,12 @@
 				5A1A4E291C1396C100AF0817 /* YSPhoto.m */,
 				5AD4BF621C18D47B0015E1A1 /* YSHomeStatusParam.h */,
 				5AD4BF631C18D47B0015E1A1 /* YSHomeStatusParam.m */,
+				5AD4BF651C18E3F60015E1A1 /* YSHomeStatusResult.h */,
+				5AD4BF661C18E3F60015E1A1 /* YSHomeStatusResult.m */,
+				5AE4E9731C19A26F0060C58B /* YSUserInfoParam.h */,
+				5AE4E9741C19A26F0060C58B /* YSUserInfoParam.m */,
+				5AE4E9761C19A2810060C58B /* YSUserInfoResult.h */,
+				5AE4E9771C19A2810060C58B /* YSUserInfoResult.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -993,6 +1005,8 @@
 			children = (
 				5AD4BF5F1C18D1000015E1A1 /* YSStatusTool.h */,
 				5AD4BF601C18D1000015E1A1 /* YSStatusTool.m */,
+				5AE4E9701C19A2260060C58B /* YSUserInfoTool.h */,
+				5AE4E9711C19A2260060C58B /* YSUserInfoTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1134,14 +1148,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8A515E1C14B1F500A569D2 /* btn_close_selected@2x.png in Resources */,
-				5A8A515B1C14B1F500A569D2 /* btn_close_normal.png in Resources */,
 				5A8A51191C14AC9D00A569D2 /* MJPhotoBrowser.bundle in Resources */,
-				5A8A515D1C14B1F500A569D2 /* btn_close_selected.png in Resources */,
 				5ADE6CC51C0B7F8A00A78412 /* Images.xcassets in Resources */,
 				5AA473411C10874800172B40 /* MBProgressHUD.bundle in Resources */,
 				5A8A51B41C14F14700A569D2 /* MJRefresh.bundle in Resources */,
-				5A8A515C1C14B1F500A569D2 /* btn_close_normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1160,6 +1170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8A51471C14AD3500A569D2 /* SDWebImageDownloaderOperation.m in Sources */,
+				5AE4E97B1C19AAF00060C58B /* YSSendStatusParam.m in Sources */,
 				5AD4BF4A1C18791C0015E1A1 /* AFNetworkReachabilityManager.m in Sources */,
 				5A1A4E211C1336C700AF0817 /* YSStatusToolBarView.m in Sources */,
 				5ABEB0051C0B94640020C597 /* YSmeViewController.m in Sources */,
@@ -1167,7 +1178,7 @@
 				5A1A4E141C1336C700AF0817 /* NSDate+YS.m in Sources */,
 				5AA473A11C10A2DF00172B40 /* YSUser.m in Sources */,
 				5A8A51AC1C14F14700A569D2 /* MJRefreshAutoNormalFooter.m in Sources */,
-				5A8A515F1C14B1F500A569D2 /* DXAlertView.m in Sources */,
+				5AE4E97E1C19AB040060C58B /* YSSendStatusResult.m in Sources */,
 				5ABEB0041C0B94640020C597 /* YShomeViewController.m in Sources */,
 				5AE476501C0E442500A8A128 /* YStitleButton.m in Sources */,
 				5A8A514B1C14AD3500A569D2 /* UIButton+WebCache.m in Sources */,
@@ -1203,6 +1214,7 @@
 				5AA473DF1C10AF1900172B40 /* NSObject+MJKeyValue.m in Sources */,
 				5ADE6CBD1C0B7F8A00A78412 /* AppDelegate.m in Sources */,
 				5A8A51B71C14F14700A569D2 /* UIScrollView+MJRefresh.m in Sources */,
+				5AE4E9751C19A26F0060C58B /* YSUserInfoParam.m in Sources */,
 				5A8A51501C14AD3500A569D2 /* UIImageView+WebCache.m in Sources */,
 				5A8A51B11C14F14700A569D2 /* MJRefreshGifHeader.m in Sources */,
 				5A1A4E2A1C1396C100AF0817 /* YSPhoto.m in Sources */,
@@ -1222,6 +1234,7 @@
 				5A8A54C01C171B0100DBDEB0 /* YSComposeTextView.m in Sources */,
 				5A8A514C1C14AD3500A569D2 /* UIImage+GIF.m in Sources */,
 				5A8A51AD1C14F14700A569D2 /* MJRefreshAutoStateFooter.m in Sources */,
+				5AD4BF671C18E3F60015E1A1 /* YSHomeStatusResult.m in Sources */,
 				5AE476471C0DEC6600A8A128 /* YSNavgationController.m in Sources */,
 				5AD4BF491C18791C0015E1A1 /* AFHTTPSessionManager.m in Sources */,
 				5A8A51441C14AD3500A569D2 /* SDWebImageCompat.m in Sources */,
@@ -1229,6 +1242,7 @@
 				5A8A51B61C14F14700A569D2 /* UIScrollView+MJExtension.m in Sources */,
 				5A8A51A71C14F14700A569D2 /* MJRefreshBackFooter.m in Sources */,
 				5AA472FD1C107DF900172B40 /* YSweiboTool.m in Sources */,
+				5AE4E9781C19A2810060C58B /* YSUserInfoResult.m in Sources */,
 				5AA473DE1C10AF1900172B40 /* NSObject+MJCoding.m in Sources */,
 				5A8A511A1C14AC9D00A569D2 /* MJPhotoBrowser.m in Sources */,
 				5A8A511C1C14AC9D00A569D2 /* MJPhotoProgressView.m in Sources */,
@@ -1244,13 +1258,16 @@
 				5AD4BF471C18791C0015E1A1 /* AFHTTPRequestOperation.m in Sources */,
 				5AB364EF1C0F8FF2005417CA /* YSOAuthViewController.m in Sources */,
 				5A8A51B51C14F14700A569D2 /* MJRefreshConst.m in Sources */,
+				5AE4E9721C19A2260060C58B /* YSUserInfoTool.m in Sources */,
 				5A8A51411C14AD3500A569D2 /* MKAnnotationView+WebCache.m in Sources */,
 				5A8A514A1C14AD3500A569D2 /* SDWebImagePrefetcher.m in Sources */,
+				5AE4E9811C19C03C0060C58B /* YSAccountParam.m in Sources */,
 				5AA472F91C1079DA00172B40 /* YSaccountTool.m in Sources */,
 				5A8A51AF1C14F14700A569D2 /* MJRefreshBackNormalFooter.m in Sources */,
 				5A8A514E1C14AD3500A569D2 /* UIImage+WebP.m in Sources */,
 				5A8A51A81C14F14700A569D2 /* MJRefreshComponent.m in Sources */,
 				5AD4BF4F1C18791C0015E1A1 /* AFURLSessionManager.m in Sources */,
+				5AE4E9841C19C05D0060C58B /* YSAccountResult.m in Sources */,
 				5A8A51461C14AD3500A569D2 /* SDWebImageDownloader.m in Sources */,
 				5AD4BF4D1C18791C0015E1A1 /* AFURLRequestSerialization.m in Sources */,
 				5A1A4E241C13862B00AF0817 /* YSRetweetView.m in Sources */,

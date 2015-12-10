@@ -12,6 +12,7 @@
 #import "YSaccountTool.h"
 #import "YSweiboTool.h"
 #import "MBProgressHUD+MJ.h"
+
 @interface YSOAuthViewController ()<UIWebViewDelegate>
 
 @end
@@ -58,16 +59,32 @@
 //redirect_uri 	true 	string 	回调地址，需需与注册应用里的回调地址一致。
 -(void)accessTokenWithCode:(NSString *)code
 {
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"client_id"] = @"383938312";
-    parameters[@"client_secret"] = @"3246c67b415bf2613e25581bc0f278a6";
-    parameters[@"grant_type"] = @"authorization_code";
-    parameters[@"code"] = code;
-    parameters[@"redirect_uri"] = @"http://www.yangshun.date";
-    [YSHttpTool postWithURL:@"https://api.weibo.com/oauth2/access_token" params:parameters success:^(id json) {
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+//    parameters[@"client_id"] = @"383938312";
+//    parameters[@"client_secret"] = @"3246c67b415bf2613e25581bc0f278a6";
+//    parameters[@"grant_type"] = @"authorization_code";
+//    parameters[@"code"] = code;
+//    parameters[@"redirect_uri"] = @"http://www.yangshun.date";
+//    [YSHttpTool postWithURL:@"https://api.weibo.com/oauth2/access_token" params:parameters success:^(id json) {
+//        [MBProgressHUD hideHUD];
+//        //归档
+//        YSaccount *account = [YSaccount accountWithDict:json];
+//        [YSaccountTool saveAccount:account];
+//        [YSweiboTool chooseRootController];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD hideHUD];
+//    }];
+    
+    YSAccountParam *param = [[YSAccountParam alloc]init];
+    param.client_id = @"383938312";
+    param.client_secret = @"3246c67b415bf2613e25581bc0f278a6";
+    param.grant_type = @"authorization_code";
+    param.code = code;
+    param.redirect_uri = @"http://www.yangshun.date";
+    [YSaccountTool accountWithParam:param success:^(YSAccountResult *result) {
         [MBProgressHUD hideHUD];
         //归档
-        YSaccount *account = [YSaccount accountWithDict:json];
+        YSaccount *account = result;
         [YSaccountTool saveAccount:account];
         [YSweiboTool chooseRootController];
     } failure:^(NSError *error) {

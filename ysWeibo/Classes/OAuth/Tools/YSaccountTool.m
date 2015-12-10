@@ -9,7 +9,8 @@
 
 #import "YSaccountTool.h"
 #import "YSaccount.h"
-
+#import "MJExtension.h"
+#import "YSHttpTool.h"
 @implementation YSaccountTool
 
 +(void)saveAccount:(YSaccount *)account
@@ -28,6 +29,22 @@
     }else{
         return nil;
     }
+}
+
++(void)accountWithParam:(YSAccountParam *)param success:(void (^)(YSAccountResult *))success failure:(void (^)(NSError *))failure
+{
+
+    [YSHttpTool postWithURL:@"https://api.weibo.com/oauth2/access_token" params:param.mj_keyValues success:^(id json) {
+        if (success) {
+            YSAccountResult *result = [YSAccountResult mj_objectWithKeyValues:json];
+            success(result);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+
 }
 
 @end

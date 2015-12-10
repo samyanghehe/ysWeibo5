@@ -7,9 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-@class YSHomeStatusParam;
+#import "YSHomeStatusParam.h"
+#import "YSHomeStatusResult.h"
+#import "YSSendStatusParam.h"
+#import "YSSendStatusResult.h"
+
 @interface YSStatusTool : NSObject
 
-+(void)homeStatusWithParam:(YSHomeStatusParam *)param success:(void(^)(id json))success failure:(void(^)(NSError *error))failure;
++(void)homeStatusWithParam:(YSHomeStatusParam *)param success:(void(^)(YSHomeStatusResult *result))success failure:(void(^)(NSError *error))failure;
 
++(void)sendStatusWithParam:(YSSendStatusParam *)param success:(void(^)(YSSendStatusResult *result))success failure:(void(^)(NSError *error))failure;
+
++(void)sendStatusWithParam:(YSSendStatusParam *)param formDataArray:(NSArray *)formDataArray success:(void(^)(YSSendStatusResult *result))success failure:(void(^)(NSError *error))failure;
 @end
