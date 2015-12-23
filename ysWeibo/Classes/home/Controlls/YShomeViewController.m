@@ -150,7 +150,7 @@
     YSHomeStatusParam *param = [[YSHomeStatusParam alloc]init];
     YSaccount *account = [YSaccountTool account];
     param.access_token = account.access_token;
-//    param.count = @(5);
+    param.count = @(15);
     
     if (self.statuseFrames.count) {
         YSStatusFrame *statusFrame = [self.statuseFrames lastObject];
@@ -290,7 +290,7 @@
     YSHomeStatusParam *param = [[YSHomeStatusParam alloc]init];
     YSaccount *account = [YSaccountTool account];
     param.access_token = account.access_token;
-    param.count = @(5);
+//    param.count = @(20);
     if (self.statuseFrames.count) {
         YSStatusFrame *statusFrame = self.statuseFrames[0];
         param.since_id = @([statusFrame.status.idstr longLongValue]);

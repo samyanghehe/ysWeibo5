@@ -28,8 +28,8 @@
 
 #define YStitleButtonImageW 20
 
-#define IWPhotoW 70
-#define IWPhotoH 70
+#define IWPhotoW 90
+#define IWPhotoH 90
 #define IWPhotoMargin 10
 
 #define ios7 ( [[UIDevice currentDevice].systemVersion doubleValue]>7.0)

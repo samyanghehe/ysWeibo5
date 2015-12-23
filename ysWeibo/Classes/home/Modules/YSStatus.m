@@ -16,7 +16,7 @@
 //    NSLog(@"%@",_created_at);
 //    return _created_at;
     NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-    fmt.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
+//    fmt.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
     NSDate *createdDate = [fmt dateFromString:_created_at];
     
@@ -47,10 +47,15 @@
 
 -(void)setSource:(NSString *)source
 {
-    NSUInteger loc = [source rangeOfString:@">"].location + 1;
-    NSUInteger len = [source rangeOfString:@"</"].location - loc;
-    NSString *source1 = [source substringWithRange:NSMakeRange(loc, len)];
-    NSString *newSource = [NSString stringWithFormat:@"来自: %@",source1];
-    _source = newSource;
+    if (source == nil||[source isEqualToString:@""]) {
+        _source = @"来自未知应用";
+    }else{
+        
+        NSUInteger loc = [source rangeOfString:@">"].location + 1;
+        NSUInteger len = [source rangeOfString:@"</"].location - loc;
+        NSString *source1 = [source substringWithRange:NSMakeRange(loc, len)];
+        NSString *newSource = [NSString stringWithFormat:@"来自: %@",source1];
+        _source = newSource;
+    }
 }
 @end

@@ -13,7 +13,6 @@
 #import <Foundation/Foundation.h>
 #import "MJPhotoBrowser.h"
 #import "MJPhoto.h"
-#import "DXAlertView.h"
 @implementation YSPhotosView
 
 -(instancetype)initWithFrame:(CGRect)frame
